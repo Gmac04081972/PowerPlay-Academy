@@ -1,0 +1,1666 @@
+{
+  "program": "PowerPlay Academy",
+  "passRule": {
+    "safetyPercent": 100,
+    "overallPercent": 90,
+    "note": "Pass = 100% on safety questions AND 90% overall."
+  },
+  "levels": [
+    {
+      "key": "trainee",
+      "name": "Trainee",
+      "order": 1,
+      "duration": "3 × 3-hour sessions",
+      "signoffAuthority": "Track Manager",
+      "onlineTest": {
+        "syllabus": [
+          "The two priorities & the PRACE values",
+          "The customer is #1: Respect, Help, Interact",
+          "Helmets, belts & the two-finger test",
+          "Kart operation: charging, pit gate, on/off, sending karts",
+          "The safety briefing",
+          "Getting in safely; always walk on the yellow",
+          "Pass:  100% on safety questions, 90% overall."
+        ],
+        "passRule": "100% on safety questions, 90% overall."
+      },
+      "phases": [
+        {
+          "phase": "Why We Are Here",
+          "modules": [
+            {
+              "code": "01",
+              "title": "The Two Priorities",
+              "content": [
+                "BLUNT · FUNNY WITHOUT TRYING · NEVER PRECIOUS",
+                "THE POWERPLAY TEAM PLAYBOOK — DELIVERING THE TRACK EXPERIENCE",
+                "We're here to help.",
+                "Not to shout \"brake.\" Our job is to help every customer go as fast as they want — safely. Everyone in the venue needs to know how the experience is delivered: just because you're on the front desk doesn't mean you stop paying attention to the track.",
+                "YOUR TWO PRIORITIES",
+                "1",
+                "KEEP PEOPLE SAFE",
+                "2",
+                "DELIVER THE EXPERIENCE",
+                "WE DON'T SELL GO-KARTING.",
+                "WE SELL THE FEELING PEOPLE",
+                "HAVE WHEN THEY GET OUT.",
+                "Deliver that and we're PowerPlay. Don't, and we're just another go-kart venue. Educate well and the race runs itself — bigger smiles. You are the product.",
+                "GMac built PowerPlay to share a little of what he felt across 30+ years competing in rallies all over the world. Every detail matters. No shortcuts. Complete focus on delivering the experience. EDUCATION — AND HELPING PEOPLE ENJOY THE EXPERIENCE — IS THE KEY. BIGGER SMILES ARE THE REWARD."
+              ],
+              "practicalCriteria": [
+                "States the two priorities unprompted: keep people safe, deliver the experience",
+                "Explains “we sell the feeling, not go-karting” in their own words",
+                "Gives a real example of putting safety first when priorities compete"
+              ]
+            },
+            {
+              "code": "02",
+              "title": "PowerPlay On A Page",
+              "content": [
+                "ONE PAGE.",
+                "THE WHOLE JOB.",
+                "POWERPLAY ON A PAGE",
+                "QUICK REFERENCE — IF YOU READ ONE PAGE, READ THIS",
+                "THE TWO PRIORITIES",
+                "1.  Keep people safe.",
+                "Deliver the experience.",
+                "Safety first – Keep everyone safe, both the customers and the team. We have the best of safety equipment and standards yet we rely on you to always have safety as your first thought.",
+                "THE CUSTOMER IS #1",
+                "Respect · Help · Interact.",
+                "Talking to people is your whole job.",
+                "Never tell them off — there’s no “DON’T” on any sign at PowerPlay. You need to think like this too. Always seek to help people. Interact with customers at any opportunity talk with them about their experience.",
+                "ON TRACK — LESS IS MORE",
+                "Read the play. Signal first.",
+                "Call “brake” only if you don’t see them braking.",
+                "Watch their feet down the ramp on the brake pedal – if you don’t seem them brake when you think they should the react instantly – hand signals and ”brake”.",
+                "HAND SIGNALS",
+                "Point = look here  ·  Hand up = brake",
+                "Pull back = ease off  ·  Point the line",
+                "Look up  ·  Turn in  ·  Thumbs up = nailed it",
+                "The PSL – PowerPlay Sign Language is the key to connecting with each customer on track. Together with your voice you will cut through the noise and help them.",
+                "RECOVERY & STOPPAGES",
+                "Stand on the safe side. Speed 1 if needed.",
+                "Three chances, then off the track to coach.",
+                "Keep the race flowing.",
+                "No one likes it when we slow the karts down. We should minimize how much we do this every race. That means great briefings, good education and pulling people over that need more help. Always try to keep the race moving.",
+                "THE DE-BRIEF – SUPER IMPORTANT",
+                "Result  ·  genuine praise  ·  one tip.",
+                "Create the bonded moment – real connection.",
+                "It’s why they come back.",
+                "Interacting with the customers post race is a lot more than just helping to take their helmet off. Ask them how their race was, where did they finish, which corner they liked best, which was the biggest challenge?",
+                "THE ACADEMY:  Trainee → Rookie → Rally → WRC → Champion → ★ GMac Standard",
+                "If you read one page, read this.  ·  2 / 51"
+              ],
+              "practicalCriteria": [
+                "Walks through the one-page overview confidently",
+                "Uses it to answer a “what do I do when…” question"
+              ]
+            },
+            {
+              "code": "03",
+              "title": "Our Values — PRACE",
+              "content": [
+                "WHO WE ARE",
+                "OUR VALUES",
+                "PRACE.",
+                "The five values behind everything in this playbook and the detail that PowerPlay is built on.",
+                "Gmac wants us to live them on every shift.",
+                "P",
+                "PASSIONATE",
+                "“I am Passionate”",
+                "My enthusiasm demonstrates it.",
+                "R",
+                "RESPECTFUL",
+                "“I am Respectful”",
+                "Taking responsibility for my actions and attitude.",
+                "A",
+                "ACCOUNTABLE",
+                "“I am Accountable”",
+                "I know my role, proactively implement it, and seek help when needed.",
+                "C",
+                "COMMITTED",
+                "“I am Committed”",
+                "To teamwork and the PowerPlay community.",
+                "E",
+                "EMPOWERING",
+                "“I Empower”",
+                "Myself and others through education.",
+                "Who we are — live it every shift.",
+                "The safety and experience of our guests and team is our number one priority. We strive for 100% safety, 100% of the time — every decision is guided by it."
+              ],
+              "practicalCriteria": [
+                "Names all five PRACE values",
+                "Gives a real on-floor example for each value",
+                "Demonstrates a value in a live interaction"
+              ]
+            },
+            {
+              "code": "04",
+              "title": "Who We Are",
+              "content": [
+                "FROM THE BRAND BIBLE",
+                "WHO WE ARE",
+                "What · How · Why.",
+                "Not just go-karting. PowerPlay is a next-level immersive experience — here's what that means.",
+                "WHAT DO WE DO?",
+                "We provide an epic, immersive racing experience on our unique two-level tracks.",
+                "They are slippery by design, so they challenge even the seasoned racer.",
+                "This is a rally inspired go karting experience.",
+                "HOW DO WE DO IT?",
+                "We inspire growth and confidence through intense, playful and measurable competition.",
+                "We teach people to go as fast as they want to go",
+                "The scoreboard is huge for a reason, everything at PowerPlay is a competition.",
+                "WHY DO WE DO IT?",
+                "After spending a lifetime rallying around the workd, Gmac’s aim was, and is to create an environment where people can experience a little of what he felt.",
+                "Where people can come together make memories and 'bonded moments', experiencing things they never thought possible.",
+                "CORE FOCUS — “BONDED MOMENTS”",
+                "To deliver a safe, fun, clean, immersive, empowering and competitive racing experience that makes people feel happy, positive and connected to each other. We call this creating “Bonded Moments”. Real People + Real Smiles + Real Connection = Bonded Moments.",
+                "Not just go-karting."
+              ],
+              "practicalCriteria": [
+                "Explains what we do, how we do it, and why",
+                "Describes a “bonded moment” and how to create one"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "The Customer and The Academy",
+          "modules": [
+            {
+              "code": "05",
+              "title": "The Customer Is Number 1",
+              "content": [
+                "RESPECT THEM.",
+                "NEVER TELL THEM OFF.",
+                "THE CUSTOMER IS NUMBER 1",
+                "EVERY STEP IS ABOUT THE PERSON IN FRONT OF YOU",
+                "Everything in this playbook serves one thing — the customer. We keep them safe because we respect them, we help them have a great time by educating them and then we connect.",
+                "RESPECT",
+                "Treat every customer with respect. Never tell them off — no negative language, no “DON’T” – not unless they are compromising someone else’s safety then ask them to respect others.",
+                "They came to have fun, not to be corrected. Coach not correct.",
+                "HELP",
+                "Help them first. Show them, guide them, make it easy —  the welcome, the guidance into the driver zone, the chat, the briefing, the helmet, the strapping into the go kart, the help on track, the post race into pit lane, the debrief, the results and the podium.",
+                "Talk to them, guide them, make them feel special. Coach on track,",
+                "INTERACT",
+                "Then interact: chat, encourage, celebrate.",
+                "People are the experience — the connection is what they take home.",
+                "The pre-race interaction tells you who they are, if they are super confident or nervous and everything in between.",
+                "AT EVERY STEP, ASK: am I respecting them, helping them, connecting with them? It matters most when someone refuses a helmet, when a race keeps stopping, and in the de-brief — help them, never tell them off.",
+                "Respect. Help. Interact.  ·  5 / 51"
+              ],
+              "practicalCriteria": [
+                "Demonstrates Respect, Help and Interact in a live or role-played interaction",
+                "Handles a difficult guest politely — never tells a customer off",
+                "Puts the customer first when priorities compete"
+              ]
+            },
+            {
+              "code": "06",
+              "title": "Greet and Read The Room",
+              "content": [
+                "TALKING TO PEOPLE",
+                "IS YOUR WHOLE JOB.",
+                "CUSTOMER INTERACTION",
+                "PRE-RACE — GREET, READ THE ROOM, BUILD RAPPORT",
+                "The customer is the undisputed number 1. It starts before they’re in the kart — read each person and talk to them.",
+                "GREET & BUILD RAPPORT",
+                "“Welcome to PowerPlay! Been here before?”",
+                "“Date night? Are you all here together?”",
+                "“Special occasion — what brings you in?”",
+                "”how many different groups do we have here?”",
+                "Be friendly and respectful — this is your whole job.",
+                "Read who wants to chat and who doesn’t.",
+                "READ THE ROOM",
+                "Nervous? → they need more help and reassurance. They may not ask questions so look to help.",
+                "Own helmet? → they’ve raced before.",
+                "Own gloves? → very keen, maybe overconfident — watch them.",
+                "Match the group’s energy.",
+                "Special Needs Group – gauge the level of ability",
+                "Kids Birthday Party – how many have never been go kartng?",
+                "KEEP THEM SAFE — KINDLY",
+                "“Helmet feels tight? It still comes off — and tight is what keeps you safe.”",
+                "Always walk on the yellow path in the Pit Lane.",
+                "Getting in: one leg next to the steering wheel, then swing the other leg over — seat yes, plastic no.",
+                "“We’ll come round and do everyone’s belts up.”",
+                "Switch off all go karts before they get out of the go karts.",
+                "BUILD THEM UP & READ CUES",
+                "“Ready to have some fun? Who’s winning today?”",
+                "Own helmet? “Have you done much racing?”",
+                "Listen for experience — it tells you how to run their race.",
+                "You’re always looking for cues.",
+                "Been here before – check past history.",
+                "Talking to people is your whole job.  ·  6 / 51"
+              ],
+              "practicalCriteria": [
+                "Greets guests warmly on arrival",
+                "Reads the group type and adjusts their approach",
+                "Makes guests feel looked after before they’re in the kart"
+              ]
+            },
+            {
+              "code": "07",
+              "title": "The PowerPlay Academy",
+              "content": [
+                "KNOW IT.",
+                "CLIMB IT.",
+                "THE POWERPLAY ACADEMY",
+                "OUR RANKING & CERTIFICATION SYSTEM",
+                "Everyone climbs the same ladder. You qualify by proving you know the playbook and can deliver it — knowledge and the experience move you up. Reading this is how you start the climb.",
+                "1",
+                "TRAINEE   ·   IN TRAINING",
+                "Learns safety and the customer-first basics — helps and watches, supervised.",
+                "2",
+                "ROOKIE   ·   RUNS RACES",
+                "Runs a race solo: the briefing, strapping in, coaching with signals, the de-brief.",
+                "3",
+                "RALLY   ·   TRACK LEAD",
+                "Leads the floor and coaches the coaches. Speed 4 qualified — sets the example.",
+                "4",
+                "WRC   ·   TRACK MANAGER",
+                "Owns the track, the karts, standards, incidents and the Education Score day-to-day.",
+                "5",
+                "DRIVER COACH   ·   SENIOR LEADERS · MARK & COOPER",
+                "Sets the standard across the team and venues; develops Track Managers.",
+                "★",
+                "THE GMAC STANDARD   ·   DAYMON & GMAC",
+                "The gold standard — bonded moments every time. What we’re all measured against.",
+                "Know it. Climb it.  ·  7 / 51"
+              ],
+              "practicalCriteria": [
+                "Explains the ladder: Trainee → Rookie → Rally → WRC → Champion",
+                "Describes how they move up and what’s expected"
+              ]
+            },
+            {
+              "code": "08",
+              "title": "Certification Explained",
+              "content": [
+                "ONLINE + PRACTICAL.",
+                "THEN SIGNED OFF.",
+                "CERTIFICATION",
+                "EVERY LEVEL — ONLINE TEST + PRACTICAL + SIGN-OFF",
+                "Every level is earned the same way — an online test for the knowledge, a practical assessment on the floor, then a sign-off. You only move up when both are done, and only the right person can sign.",
+                "1 · TRAINEE   IN TRAINING",
+                "Online — safety & values test",
+                "Practical — fit helmets, do belts, greet & read the room (supervised)",
+                "Sign-off — Track Manager",
+                "2 · ROOKIE   RUNS RACES",
+                "Online — full Part One test",
+                "Practical — run a session solo — briefing, signals, recovery, de-brief",
+                "Sign-off — Track Manager",
+                "3 · RALLY   TRACK LEAD",
+                "Online — leadership + Part One test",
+                "Practical — Speed 4 qualified (2 races, 0 spins, 6 laps under the Speed 4 time) + lead a shift",
+                "Sign-off — Track Manager",
+                "4 · WRC   TRACK MANAGER",
+                "Online — Part One + Part Two test",
+                "Practical — incidents, Education Score & developing Leads",
+                "Sign-off — Senior Track Manager (State) and/or Daymon & GMac",
+                "5 · DRIVER COACH  SENIOR LEADERS",
+                "Online — standards & leadership review",
+                "Practical — proven record across venues; develops Track Managers",
+                "Sign-off — Daymon & GMac only",
+                "★ · THE GMAC STANDARD   DAYMON & GMAC",
+                "The gold standard — recognised, not applied for. Awarded by Daymon & GMac.",
+                "No sign-off, no level up.  ·  8 / 51"
+              ],
+              "practicalCriteria": [
+                "Explains the model: online test + practical + sign-off",
+                "States the pass mark: 100% on safety, 90% overall"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "The Briefing",
+          "modules": [
+            {
+              "code": "09",
+              "title": "The Briefing",
+              "content": [
+                "EVERY WORD IS THE BRAND.",
+                "READ THE ROOM.",
+                "1",
+                "THE BRIEFING",
+                "VERBAL FIRST, THEN THE VIDEO — SET IT UP FOR SUCCESS",
+                "Deliver the briefing in the Driver Zone — yellow stools, watch the video.",
+                "You can deliver a verbal briefing before or after the video starts. How well you engage people now has a huge impact on how well the race runs. Every team member on shift must know how to deliver a briefing — and understand what they're saying.",
+                "The Briefing Zone is the yellow area of the Driver Zone — guests sit on the yellow stools and watch the video here.",
+                "Be genuinely positive. Lead with \"we're here to help you have a great time and go quick.\" Read the room — name the birthdays; first-timers get \"you're going to love this.\"",
+                "The briefing is where the experience is set up for success. Phones down, make sure everyone's paying attention, and politely ask anyone who’s attention is drifting to re-focus on the video.",
+                "Miss it now, fix it all session.  ·  9 / 51",
+                "BLUNT · FUNNY WITHOUT TRYING · NEVER PRECIOUS",
+                "PRE-RACE",
+                "BRIEFING",
+                "We're here to help them",
+                "go as fast as they want to go.",
+                "This guide is your script for the verbal briefing. Understand it. Be confident and deliver it every time. The pre-race briefing sets up the whole session.",
+                "YOUR TWO PRIORITIES",
+                "1   KEEP PEOPLE SAFE",
+                "2   DELIVER THE EXPERIENCE",
+                "THE PRE-RACE BRIEFING SETS UP THE WHOLE RACE.",
+                "Miss it now, fix it all session.",
+                "Every team member must know how to deliver the briefing — and understand what they're saying.",
+                "The briefing sets up the experience.",
+                "VERBAL FIRST → THEN THE VIDEO",
+                "DELIVERY TIPS",
+                "SET THE TONE FIRST",
+                "1",
+                "BEFORE YOU START",
+                "DELIVERY TIPS — SET THE TONE",
+                "These tips are not optional – 100% delivered 100% of the time. How you deliver the briefing matters as much as what you say.",
+                "MAKE EYE CONTACT & SMILE",
+                "Set a fun, welcoming tone before you say a word. The more open you are the more open the people you are talking to are likely to be.",
+                "SPEAK CLEARLY",
+                "Relaxed pace. Don't rush. Understand exactly what you are saying - if you don’t understand you need to ask questions until  you do. Remember everyone you are delivering to is hearing the briefing for the first time.",
+                "READ THE ROOM",
+                "Ask if they've been to a PowerPlay before or been go-karting before. Adjust your energy to match them. Some people may have their own helmet, or some people may look nervous. Their body language tells you something. Pick up what that means for how you tackle the session.",
+                "USE THE ARROWS ON TRACK",
+                "Point to the arrows on the wall/floor as you explain each one.",
+                "THE BRIEFING SCRIPT",
+                "GREETING & POWER",
+                "2",
+                "THE BRIEFING SCRIPT",
+                "DELIVER NATURALLY — COVER EVERY POINT",
+                "GREETING",
+                "SAY →",
+                "“Hey guys — first time here for everyone?” (open hands, wait for the nod)",
+                "“Any of you been go-karting before?” If yes, ask where — gauge experience.",
+                "“Anyone got their own helmet or balaclava? Looks like we’ve got some pros in the room!”",
+                "SAY →",
+                "“Welcome to PowerPlay! I’ve got a short safety video in a sec.”",
+                "“First, a few quick tips — to keep you safe and help you go as fast as you want.”",
+                "“I’m sure some of you want to top the leaderboard?” (point to it) “We are here to help you get you there!”",
+                "INSTANT POWER",
+                "SAY →",
+                "“These karts are the best we could find from europe and have instant power — press the green pedal or the accelerator and it’s there straight away.”",
+                "“If you push hard enough you’ll spin the wheels, drift and slide, all great fun”",
+                "“So you’ll want to control the way you accelerate — I’ll show you how shortly.”",
+                "Miss it now, fix it all session.",
+                "THE BRIEFING SCRIPT",
+                "THE ARROWS — KEY SAFETY POINT",
+                "3",
+                "THE ARROWS",
+                "KEY SAFETY POINT — COVER THIS EVERY TIME",
+                "SAY →",
+                "“The secret to going fast? The brakes — the red pedal. Used right, they help you turn – don’t believe me, ill explain how shortly.”",
+                "“You’ll see coloured arrows at every corner” (point to them).",
+                "“They show where to drive — and each colour is designed to give you clues on what to do:”",
+                "COLOUR",
+                "MEANING",
+                "WHAT TO TELL CUSTOMERS",
+                "RED",
+                "BRAKING ZONE",
+                "The Red Arrow is the braking zone. Turn the steering toward the corner, then brake — enough to help the kart change direction. Need it to turn more? A touch harder and a little longer on the brake pedal will do that. Hear a screech? Ease off the brake a little.",
+                "YELLOW",
+                "CONTROL POWER",
+                "At the Yellow Arrows you can start to squeeze on the accelerator – use your hand to show what that means. Manage your speed through the corner. If the kart starts to slide or spin, you’ve pressed the accelerator a bit too hard — lift off and it'll straighten up. Spin in this part of the corner, it just means you're a touch heavy on the throttle – otherwise know as a lead foot .",
+                "BLACK",
+                "FLAT OUT!",
+                "The Black Arrow is where you should be able to go flat out on the accelerator. All you have to make sure of is that you have the kart pointed in the direction you want to go. – Use your hands to show what you mean – then go as hard as you want on the accelerator / green pedal.",
+                "RED = BRAKE  ·  YELLOW = CONTROL THE POWER  ·  BLACK = FLAT OUT – USE YOUR HANDS IN THE BRIEFING",
+                "THE BRIEFING SCRIPT",
+                "RAMP & CLOSE",
+                "4",
+                "THE RAMP & CLOSE",
+                "FINISH STRONG — EVERY TIME",
+                "THE RAMP — LAST TIP",
+                "SAY →",
+                "“Last tip — brake as you come down the ramp. Trust me, you don’t want to meet the wall.”",
+                "{Write a specific line for your track here — every ramp is different.}",
+                "CLOSE & HAND TO VIDEO",
+                "SAY →",
+                "“Out on track you’ll see us talking and using hand signals — our team does that to try and help you while you’re driving. Keep an eye out for us.”",
+                "“Thanks for listening! I’ll put the video on now — it shows more of the techniques we just discussed.”",
+                "“When it’s done, I’ll come help you with your helmets.”",
+                "COMMON CUSTOMER QUESTIONS",
+                "Can I drift?",
+                "Yes! The karts have plenty of power to drift. If you find yourself drifting or sliding too much, lift off the power and the kart will come back straight.",
+                "What if I spin out?",
+                "We’ll come and help you if you are stuck. Sometimes you will be able to move on your own even when you think you are stuck – turn the steering and try to move.",
+                "How do I go faster?",
+                "Follow the arrows, brake early and smooth, control that accelerator out of the corner. Braking earlier gives you more chance to get the corner right.",
+                "Can I bump other karts?",
+                "Rubbing is racing — but be respectful. No intentional ramming of others.",
+                "QUICK REFERENCE",
+                "RUN THROUGH THIS BEFORE EVERY BRIEFING",
+                "5",
+                "QUICK REFERENCE",
+                "RUN THROUGH THIS BEFORE EVERY BRIEFING",
+                "✓",
+                "Welcome — first time? raced before? own helmet? (spot the pros)",
+                "✓",
+                "Instant power — control the throttle; too sideways, lift off",
+                "✓",
+                "Braking into corners — turn toward the corner and brake to help it turn. Horrible noise – braked too hard.",
+                "✓",
+                "Red arrow = Braking zone",
+                "✓",
+                "Yellow arrow = control power — start to squeeze the throttle",
+                "✓",
+                "Black arrow = flat out — as fast as you want to go",
+                "✓",
+                "Warn about the ramp — brake before the last arrow (softer & earlier = better corner)",
+                "✓",
+                "Mention hand signals & voice on track — then play the video, return, helmets"
+              ],
+              "practicalCriteria": [
+                "Sets up in the Briefing Zone (yellow stools, video); gets attention, phones down",
+                "Delivers the verbal briefing using the script: greeting & power, the arrows, ramp & close",
+                "Explains the arrows correctly — red = brake, yellow = control the power, black = flat out",
+                "Re-focuses drifting guests politely; stays genuinely positive and reads the room",
+                "Runs the quick-reference check before the briefing"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "Helmets and Safety",
+          "modules": [
+            {
+              "code": "10",
+              "title": "Helmets and Safety",
+              "content": [
+                "100% SAFETY,",
+                "100% OF THE TIME.",
+                "2",
+                "HELMETS & SAFETY",
+                "IT STARTS WITH THE RIGHT HELMET",
+                "SAFETY IS OUR TOP PRIORITY — 100% SAFETY, 100% OF THE TIME. IT STARTS WITH CHOOSING THE CORRECT HELMET.",
+                "1",
+                "BEFORE FITTING",
+                "Most guests have never worn a helmet — help them choose the right size.",
+                "Remove glasses before fitting — back on once the helmet's on.",
+                "Some head scarves fit under a balaclava. Turbans generally  cannot.",
+                "2",
+                "SIZING & FIT",
+                "You help them pick their helmet size. Left alone people choose by colour or go too big in size.",
+                "Must be tight around the chin and face.",
+                "Too loose? Size down until it fits snug.",
+                "3",
+                "D-BUCKLE & CHECK",
+                "Our helmets use a D-buckle fastening system — far safer than a clip.",
+                "Done up under the chin nice and tight, it must not come off over the chin.",
+                "Confirm with the two-finger test.",
+                "4",
+                "IF THEY REFUSE",
+                "Show them how it can come off the chin if loose.",
+                "Still won't wear it right? They cannot race.",
+                "Inform your Team Lead — they process the refund.",
+                "Stay respectful — they’re disappointed, not difficult.",
+                "RE-CHECK AT PIT LANE",
+                "Even if you fitted the helmet, check it again at the entry to pit lane — 100% of the time. Engage with the customer, ask their kart number, re-check the helmet, and guide them to the right side. Customers should always walk on the yellow side.",
+                "100% safety, 100% of the time.  ·  16 / 51"
+              ],
+              "practicalCriteria": [
+                "Selects the correct helmet size",
+                "Fastens the D-buckle correctly",
+                "Performs the two-finger test",
+                "Handles an ill-fitting helmet or refusal appropriately"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "Getting In The Kart",
+          "modules": [
+            {
+              "code": "11",
+              "title": "Setting Up In The Kart",
+              "content": [
+                "BELTS FIRST. THEN SEAT.",
+                "THEN PEDALS.",
+                "3",
+                "SETTING UP IN THE KART",
+                "ENTER FROM THE YELLOW SIDE · BELTS, SEAT, PEDALS",
+                "GETTING IN & STRAPPED",
+                "Enter from the yellow painted side of pit lane. Fine to stand on the seat — never on the plastic.",
+                "Karts are reset between races if you have time: seat back, pedals forward, belts extended.",
+                "Thread both arms through the belts. Waist strap done up first, then the two shoulder straps. Every belt tight.",
+                "Always check a customer's belts even if they look right, double check them. Talk to them while you do it.",
+                "WAIST STRAP",
+                "ACROSS THE WAIST",
+                "This matters more than anything. The waist strap must sit low and across the waist, never across the stomach or chest. Always double check seat belts even as you send someone from pit lane you can do a quick visual check.",
+                "SEAT, PEDALS & CONTROL",
+                "The correct seating position has an upward bend in the legs and a downward bend in the arms. This allows people to squeeze the pedals rather than treating them like a light switch. Straight legs and arms equals less control. Being able to vary the pressure on the pedals whilst racing is the secret to a fast lap time – this is the technique.",
+                "As a general guide you will find the correct position is arms stretched straight ahead while belted in, a person’s wrist should be over the top of the steering wheel. Then seat (red strap between legs) and pedals (red button under wheel). Note some body types, long legs or torso will mean this doesn’t always work.",
+                "Always talk to people while you are strapping them in. It’s your chance to build rapport. Once you have belted someone in, turn the kart on by twisting the red button. Lights on = all safety checked & race-ready.",
+                "No belt, no track.  ·  17 / 51"
+              ],
+              "practicalCriteria": [
+                "Does belts up with the waist strap low and checks tightness",
+                "Sets belts first, then seat, then pedals",
+                "Confirms the driver is secure before sending",
+                "Walks on the yellow; stays safe around moving karts"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "Certification",
+          "modules": [
+            {
+              "code": "12",
+              "title": "Trainee Certification",
+              "content": [
+                "KNOW IT.",
+                "PROVE IT.",
+                "LEVEL 1 · TRAINEE",
+                "IN TRAINING — CERTIFICATION",
+                "TYPICAL DURATION:  3 × 3-hour sessions",
+                "ONLINE TEST",
+                "The two priorities & the PRACE values",
+                "The customer is #1: Respect, Help, Interact",
+                "Helmets, belts & the two-finger test",
+                "Kart operation: charging, pit gate, on/off, sending karts",
+                "The safety briefing",
+                "Getting in safely; always walk on the yellow",
+                "Pass:  100% on safety questions, 90% overall.",
+                "PRACTICAL ASSESSMENT",
+                "Delivers the safety briefing",
+                "Driving: laps within the Speed 4 time + 25%",
+                "Plugs karts in and out (charging)",
+                "Sends karts onto the track; works the pit gate",
+                "Turns karts on and off",
+                "Fits helmets & does belts (waist strap low); two-finger test",
+                "Greets guests, reads the room, walks them on the yellow",
+                "Never tells a customer off",
+                "SIGNED OFF BY:  Track Manager",
+                "Candidate: ____________________________     Date: ____________________",
+                "Assessor & rank: ________________________     Signature: ____________________",
+                "Trainee → Rookie  ·  46 / 51"
+              ],
+              "practicalCriteria": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "rookie",
+      "name": "Rookie",
+      "order": 2,
+      "duration": "3 × 3-hour sessions",
+      "signoffAuthority": "Track Manager",
+      "onlineTest": {
+        "syllabus": [
+          "Everything in Trainee",
+          "The verbal briefing + matching the speech to the group",
+          "All seven hand signals and their meaning",
+          "Less is more: react to cues, speak only when needed",
+          "The fast line + reading the kart & driver",
+          "Running the race + the three-chance principle",
+          "Bringing them in, the de-brief, Speeds 1–4 & the controller",
+          "Pass:  100% on safety questions, 90% overall."
+        ],
+        "passRule": "100% on safety questions, 90% overall."
+      },
+      "phases": [
+        {
+          "phase": "Communicate",
+          "modules": [
+            {
+              "code": "01",
+              "title": "Pre-Race Speeches",
+              "content": [
+                "BLUNT · FUNNY WITHOUT TRYING · NEVER PRECIOUS",
+                "PRE-RACE SPEECH IN PIT LANE",
+                "Know what to say.",
+                "Before every race.",
+                "Use the right speech for the right group. The pre-race speech sets up how well the race runs, it’s a final word to help people before they head out on track. Not a lecture — it’s all about helping our customers.",
+                "ONE SPEECH PRIOR TO THE FIRST RACE  ·  THEN A DIFFERENT SPEECH PRIOR TO THEIR SECOND AND FOLLOWING RACES. MAYBE YOU HAVE A RACE WITH A MIXTURE OF PEOPLE DOING THEIR FIRST OR SECOND RACE IN THAT CASE COMBINE THE BEST OF BOTH SPEECHES",
+                "READ THE ROOM.",
+                "PICK THE SPEECH.",
+                "There are two first race speech options",
+                "And five following race options — each one targets a specific driving issue you spotted in the previous race.",
+                "SMOOTHER RACES, BETTER LAP TIMES & BIGGER SMILES ARE THE REWARD.",
+                "PRE-RACE SPEECH",
+                "FIRST RACE",
+                "1",
+                "FIRST RACE SPEECHES",
+                "CHOOSE THE RIGHT ONE FOR YOUR GROUP",
+                "Option 1  —  For most groups",
+                "SAY →",
+                "“Heads up — your first couple of laps on track will be slippery while the tyres warm up.”",
+                "“Be smooth on the accelerator out of corners and remember to brake on the red arrows.”",
+                "“Get the technique right and the tyres will warm up and give you more grip — so you go faster. The key is braking earlier than you think!”",
+                "“No one wants to be first person to spin so use the first couple of laps to get use to the track. Everyone ready to go?”",
+                "Option 2  —  For majority juniors or nervous / inexperienced drivers",
+                "SAY →",
+                "“Let’s do a quick practice first. Turn the wheel hard right… and hard left…great job….one more time, always keep turning never give up”",
+                "“Now lets squeeze the green pedal down — that’s the go pedal. Always squeeze it, never stomp on it, the smoother the better.”",
+                "“Hard press on the red pedal — that’s the brake. Use it on the red arrows, down the ramp, anywhere you want to slow down.”",
+                "“Any questions? Everyone ready to go?”",
+                "READ THE ROOM — PICK THE OPTION THAT FITS YOUR GROUP. IF ONE PERSON LOOKS NERVOUS THEN PLEASE HELP THEM INDIVIDUALLY.",
+                "PRE-RACE SPEECH",
+                "FOLLOWING RACES",
+                "2",
+                "THE SECOND (or more) RACE SPEECHES",
+                "SPOT THE ISSUE IN THE FIRST RACE AND USE THESE BETWEEN RACES — USE THE RIGHT SPEECH",
+                "Option 1  —  Guests aren't sliding into corners / barely using the brakes",
+                "SAY →",
+                "“Great race everyone! On quick tip, the brake does most of the turning, not the steering wheel.”",
+                "“Turn the wheel toward the corner and brake on the red arrows. Not turning enough? Brake a bit harder.”",
+                "“Master it and you get back on the green pedal / accelerator earlier out of the corner — that’s the key to faster lap times. Ready?”",
+                "Option 2  —  Guests sliding too much or stopping completely when braking",
+                "SAY →",
+                "“Good work last race! One tip to go faster:”",
+                "“If you are almost stopping in the middle of the corner it means you’ve braked a bit too hard.”",
+                "“To stop that as you enter the corner, you want to ease off the brake — then you won’t stop, and you can get back on the power earlier. Ready?”",
+                "Option 3  —  Guests hugging the inside of corners",
+                "SAY →",
+                "“Great race! Want to go faster in the next race? Remember to drive over the top of the arrows through the corners.”",
+                "“Miss the arrows and you make the track longer —  the more distance you travel the slower the lap times.”",
+                "“If you stay on the arrows, especially into the corner — it sets up a better exit making it easier to steer. Ready?”",
+                "PRE-RACE SPEECH",
+                "FOLLOWING RACES",
+                "3",
+                "THE SECOND (or more) RACE SPEECHES",
+                "SPOT THE ISSUE — USE THE RIGHT SPEECH",
+                "Option 4  —  Guests not controlling power in the corner / over-sliding out of corners",
+                "SAY →",
+                "“Great race! Quick tip, if you find your sliding too much on the way out of corners?”",
+                "“Then try and be smooth on the accelerator — squeeze it, don’t treat it like a light switch.”",
+                "“Sliding on the exit loses speed down the straight. Smooth = more grip = faster exit, higher top speed and better lap times. Ready?”",
+                "Option 5  —  Guests turning too late or hitting the back of other drivers",
+                "SAY →",
+                "“Good race! Quick tip, one thing to try and focus on is to look further ahead through the corners and down the straight.”",
+                "“The further ahead you look, the more time you have to react and prepare — and it smooths out your steering.”",
+                "“You’ll also spot trouble earlier, like your friend (wife, work mate, bf etc) spun out  . Smoother steering, means you prepare earlier, you’ll fo faster and get better lap times. Ready?”",
+                "READ THE ROOM — PICK THE OPTION THAT FITS YOUR GROUP. OR MAYBE SPEAK TO INDIVIDUALS WHILE THE KARTS ARE CHARGING",
+                "AS IT MAY JUST BE ONE PERSON THAT IS STRUGGLING. THE RIGHT TIP MEANS BIGGER SMILES AND SMOOTHER RACES"
+              ],
+              "practicalCriteria": [
+                "Delivers the pit-lane speech matched to the group (first race / following races)",
+                "Keeps it a helpful final word — not a lecture",
+                "Adjusts tone for adults, kids and corporate groups"
+              ]
+            },
+            {
+              "code": "02",
+              "title": "Talk With Your Hands — Hand Signals",
+              "content": [
+                "HANDS + VOICE.",
+                "NEVER YELL.",
+                "5",
+                "TALK WITH YOUR HANDS",
+                "ON TRACK — LOUD VOICE OVER THE MOTOR + CLEAR SIGNALS",
+                "Use hand signals on track, alongside your voice — they make it far easier for people to understand you. Speak loudly so they can hear you over the noise of the motor and the tyres, and back every call with a clear hand signal. Never yell at people; point, show and signal.",
+                "→",
+                "POINT AT THEM",
+                "Get their attention if they should be braking and aren't.",
+                "✋",
+                "ONE HAND UP",
+                "Means brake — now. Clear, calm, unmistakable.",
+                "⇇",
+                "PULL HAND BACK",
+                "Ease off — brake if sliding into the corner, throttle if sliding out of the corner.",
+                "↗",
+                "POINT THE LINE",
+                "Show them where to drive — wide on the entry. On the arrows if marked.",
+                "↑",
+                "LOOK UP",
+                "Vision further up the road. Raise an arm, palm up — looking further ahead smooths their steering.",
+                "↻",
+                "TURN IN HARD",
+                "Two hands gripping the wheel, turning harder. Get the front pointed where you want to go.",
+                "👍",
+                "THUMBS UP + CLAP",
+                "Yes! Cheer them on the moment they nail it.",
+                "If you're shouting \"brake\" every corner, you're not coaching — you're a robot with a microphone. GMac will not be happy.",
+                "Signal early. Stay calm.  ·  22 / 51"
+              ],
+              "practicalCriteria": [
+                "Uses all seven hand signals correctly",
+                "Signals clearly so drivers can read them from across the track",
+                "Uses hands + voice; never yells"
+              ]
+            },
+            {
+              "code": "03",
+              "title": "Less Is More",
+              "content": [
+                "OBSERVE FIRST.",
+                "SPEAK ONLY IF NEEDED.",
+                "LESS IS MORE",
+                "ON TRACK — READ THE GROUP, SPEAK WITH PURPOSE WHEN NEEDED",
+                "Less is more when you are on track. You’re there to observe, keep people safe and speak as you need to so that you help people — not to shout “brake” every lap. Read the group, then decide what to say. Remember to use your hands.",
+                "READ THE PLAY",
+                "Every group is different. Watch first, then decide what each group needs. We call “brake” only if we don’t see them braking — not for the sake of it every lap.",
+                "For example, if they don’t brake enough use hand signals and say brake harder together. Same for steering or too much throttle. Use your hands and limited words.",
+                "PEOPLE, NOT PROCESS",
+                "It’s a people-person job — you need to be at least somewhat outgoing. Be people-oriented, not process-oriented. It’s all about their experience: keep them safe first, then help them on track, then engage with them off track.",
+                "Never default to going back and resetting karts. Engage with customers – the De-brief is everything. Re-setting karts is only a nice to have if you have time.",
+                "HANDS FIRST",
+                "Pointing and hand signals are the best way to get people’s attention on track.",
+                "With a helmet on it’s super hard to hear — you can’t hold a conversation while they race. Hand Signals and a few words – Brake Harder, Brake, Brake Earlier, Brake Softer, Ease off the Brake,  Turn More, Turn Harder, Turn Earlier, Keep Steering, Look Up,",
+                "REACT TO VISUAL CUES",
+                "React to what you see, not a script. Bottom of the ramp, first lap: watch they’re braking — you only need to shout brake if they haven’t braked when you think should have or if you have a nervous customer that needs encouragement, kids party that you are concerned about or other examples like that.",
+                "Otherwise Trust people, observe, and speak up if they don’t do the right thing.",
+                "READ THE PLAY: lap one you send out a nervous group — how do you tell they’re nervous, and what changes? You send out a kids party — what are you thinking next?",
+                "Less is more — read the play.  ·  23 / 51"
+              ],
+              "practicalCriteria": [
+                "Reacts to cues without over-coaching"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "Coach The Race",
+          "modules": [
+            {
+              "code": "04",
+              "title": "Roles On Track",
+              "content": [
+                "TWO ON TRACK.",
+                "READ IT FROM BOTH SIDES.",
+                "ROLES ON TRACK",
+                "WHO STANDS WHERE DURING A RACE",
+                "In peak periods there are two people on track. Both coach with signals, both cover recoveries in their zone.",
+                "POSITION 1 · BOTTOM OF THE RAMP",
+                "THE CRITICAL BRAKING POINT",
+                "Watch their feet — first three laps especially.",
+                "Speak loudly only if you don’t see them braking.",
+                "Or if you have a nervous group then speak loudly.",
+                "Want them braking earlier? Point at them and say it, clear and loud",
+                "Leads the race – sets the tone in the first few laps to set the race up.",
+                "Focus – keeping people safe first laps, correct braking and/or steering then move as more confident into helping and educating.",
+                "POSITION 2 · PRE-DETERMINED LOCATION",
+                "SET BY THE TRACK MANAGER FOR YOUR LAYOUT – APPROVED BY GMAC",
+                "The next place that influences the success of how races are run.",
+                "Read the race from the other side — signals first, a few words only.",
+                "Proactive, loud and clear for juniors or anyone nervous.",
+                "Recoveries in your zone — stand on the safe side.",
+                "Focus – safety and teaching people the technique – get them to slide. Keep the race running, limited stoppages yet helping and education are the key to bigger smiles.",
+                "AROUND THE RACE",
+                "Front of House — one FOH person can jump on track to help  if the race is struggling (e.g. a kids or junior race).",
+                "Recoveries in your zone — always assess the track before entering it. Stand on the safe side away from traffic when you can.",
+                "If they spin in the first half of the corner they braked too hard.",
+                "If the spin the second half of the corner they accelerated too hard.",
+                "PEAK TIMES = TWO ON TRACK.  Quieter periods = one — positioned at the bottom of the ramp.",
+                "Stand where the race is won.  ·  24 / 51"
+              ],
+              "practicalCriteria": [
+                "Knows the two on-track roles and who stands where",
+                "Moves to the right position during the race"
+              ]
+            },
+            {
+              "code": "05",
+              "title": "The Fast Line",
+              "content": [
+                "IT'S NOT HOW FAST YOU GO.",
+                "IT'S HOW MUCH FASTER THAN YOUR MATES.",
+                "6",
+                "THE FAST LINE",
+                "WHAT TO ACTUALLY COACH",
+                "Brake earlier than they think — especially down the ramp - if your track has a hairpin at the bottom). This gives more time to get the corner right.",
+                "\"Brake hard\" is the wrong cue. Braking takes a decent amount of force — you should brake hard enough to help change direction — but how much depends on the driver (height & weight) speed and corner.",
+                "Brake too late and they'll brake really hard -  the horrible screech will tell you when this happens - to make the corner. Brake earlier and the same stop stays smooth and controlled. Faster and quieter. If you don’t think so – you haven’t mastered the technique – keep practicing.",
+                "Wide on entry — then steer in as they brake so the kart slides a little into the corner. Only happens if they are going fast enough.",
+                "Braking & steering shift weight so the kart changes direction quickly — on our track it should slide a little. (because it is slippery)",
+                "Slide in a little into the corner, drive straight out. Being earlier on the throttle and having a straight exit is where the speed and lap time comes from. It is all about technique not braking late.",
+                "The front of the kart is an arrow — get it turned and pointing where you want to go, then when it is facing the way you want to go you can get back on the green pedal.",
+                "Look far ahead — not at their feet or just ahead, but much further up the track. You will prepare and turn earlier. As well as seeing your mates that have spun out earlier. Jerky steering means they are looking too close.",
+                "WIDE IN · CLIP THE APEX · STRAIGHT OUT",
+                "The surface decides who's telling the truth.  ·  25 / 51"
+              ],
+              "practicalCriteria": [
+                "Coaches the fast line accurately",
+                "Frames it as “faster than your mates,” not just fast"
+              ]
+            },
+            {
+              "code": "06",
+              "title": "Reading The Kart and Driver",
+              "content": [
+                "SEE IT. NAME THE CAUSE.",
+                "GIVE THE FIX.",
+                "7",
+                "READING THE KART & DRIVER ON TRACK",
+                "SEE IT · REALISE THE CAUSE · HELP CORRECT IT — WITHIN A FEW LAPS",
+                "What you see / hear | What it means | The fix to signal",
+                "Slides a lot before the corner or spins before the corner | Braked too hard | Ease off the brake — the kart straightens and won't spin or go as sideways.",
+                "Spins from mid-corner to the exit | Too much throttle | Ease off the throttle — same again, it straightens and won't spin.",
+                "Runs wide / overshoots the corner – misses the apex | Braked too late | Brake a touch earlier next lap — more time to get it right.",
+                "Horrible screech | Locked the brake / too hard | Brake earlier and a bit softer. Not later.",
+                "Can't get the kart to slide at all | Not yet fast enough | Encourage more speed — or just help them round if they are nervous and don't want to go faster.",
+                "Pressing both pedals (double-pedalling) | Brake + throttle together | Fine for a confident driver; if it compromises them, one pedal at a time.",
+                "Jerky / rough steering. Reacting very late to corners — karts are unstable. | Looking too close — just in front of the kart | Looking further ahead will smooth out all steering.",
+                "Spins whilst turning into the corner | Turned too sharp into a corner | Looking further ahead will smooth out the steering.",
+                "↳ Keep reinforcing it — don't just say it once. A too-grippy track lets people brake late and get away with it — that's grip, not speed.",
+                "Fewer stoppages = a better experience.  ·  26 / 51"
+              ],
+              "practicalCriteria": [
+                "Spots the problem (see it)",
+                "Names the cause",
+                "Gives the correct fix"
+              ]
+            },
+            {
+              "code": "07",
+              "title": "Running The Race",
+              "content": [
+                "WATCH THE TRACK.",
+                "NOT THE SCOREBOARD.",
+                "8",
+                "RUNNING THE RACE",
+                "BOTH ATTENDANTS VOCAL — MANAGE IT, DON'T WATCH THE TIMER – THE FIRST THREE LAPS ARE THE KEY",
+                "YOUR JOB DURING THE RACE",
+                "The first three laps are critical to get control of the race. Set the tone. Manage the experience. If you have multiple spins, ask yourself why and what you can do to fix it.",
+                "Is to not stare at the scoreboard or the tablet worrying when the race ends. You should be watching the track, keeping people safe and educate.",
+                "If there are two attendants on track both should be vocal. A silent attendant isn't helping deliver the experience.",
+                "No matter who's racing, you can help. Know how many groups are in the race, it changes how you manage it.",
+                "ENCOURAGE — NEVER CRITICISE",
+                "Don't tell people off. There's no sign at PowerPlay that says \"DON'T\" — so no negative language. Positive.",
+                "Front-of-house: step in when a race isn't running smoothly. Be part of the solution — never criticise a team member.",
+                "Reflect and act. Talk with your team member between races about how you can improve the races and help people more.",
+                "Educate yourself on what to look for so that you can spot how to help people during a race.",
+                "MORE THAN 4–5 STOPPAGES A RACE?",
+                "You need to change how you're managing the race. The number of stoppages tells you whether you're doing a good job. Stoppages are frustrating and affect the experience. It means people don’t have as good a time and this affects the word of mouth advertising.",
+                "Word of mouth is one of the biggest drivers of PowerPlay's success — guests pick how they heard about us when they register (order randomised), we measure it, and it is a reflection on how well the experience is delivered.",
+                "The stoppage count tells you how you're doing.  ·  27 / 51"
+              ],
+              "practicalCriteria": [
+                "Watches the track, not the scoreboard",
+                "Manages the first three laps",
+                "Keeps the stoppage count down"
+              ]
+            },
+            {
+              "code": "08",
+              "title": "Recovery and Stoppages",
+              "content": [
+                "KEEP IT FLOWING.",
+                "STOP-START KILLS IT.",
+                "9",
+                "RECOVERY & STOPPAGES",
+                "GET THEM GOING — KEEP THE RACE FLOWING – STOPPAGES STOP THE EXPERIENCE HAPPENING",
+                "Stop-start ruins the experience. Some stoppages are inevitable — but repeated stoppages are unacceptable; it means you've lost control of the race. Educate more. We get the race running again quickly.",
+                "1",
+                "KARTS TO SPEED 1",
+                "Put all karts on Speed 1 if needed — normally required. 100% safety, 100% of the time. If all karts just passed the spun kart/s use common sense. Stay Alert.",
+                "2",
+                "STAND SAFE",
+                "Stand on the side of the kart away from approaching traffic. Never stand between a spun kart and oncoming drivers.",
+                "3",
+                "LET CUSTOMERS SELF-RESCUE",
+                "If they can recover by turning more and brushing a barrier, encourage it — back racing faster. You don’t need to Speed 1 in this case.",
+                "4",
+                "QUICK WHY, THEN GO",
+                "Help them grasp what happened as you recover them, fast and clearly, before sending them back to racing.",
+                "THE THREE-CHANCE PRINCIPLE — APPLIES TO INDIVIDUALS",
+                "1   2   3   →   OFF THE TRACK TO COACH",
+                "If one person spins or causes stoppages three times, bring them off to educate before they rejoin — this race, the next, or a solo session. Unlike other experiences at PowerPlay someone spinning or causing stoppages can make it less fun for others. People get frustrated by stoppages which is completely fair enough. Give people 3 chances. If they are still causing a race to be slowed down, take them off track, re-educate them in the pit lane. Then send them back out in the race if you are confident they understood or send them out in between the next race or have them join a different race if time allows. We cannot have one person compromising another person’s experience.",
+                "Everyone gets the experience they paid for.  ·  28 / 51"
+              ],
+              "practicalCriteria": [
+                "Uses Speed 1 for recovery",
+                "Stands on the safe side",
+                "Applies the three-chance principle",
+                "Avoids stop-start; keeps the race flowing"
+              ]
+            },
+            {
+              "code": "09",
+              "title": "Bringing Them In",
+              "content": [
+                "SLOW SPEED ZONE.",
+                "STILL DANGEROUS.",
+                "10",
+                "BRINGING THEM IN",
+                "END OF RACE — MANAGE PIT LANE CAREFULLY",
+                "1",
+                "PUSH WHO NEEDS IT",
+                "Push the juniors in, and any drivers you're concerned about. Talk to them as you push them in. One hand on the roll bar and one on the steering wheel. Never just behind the kart.",
+                "2",
+                "EVERYONE ELSE DRIVES IN",
+                "Adults, and Speed 3 or 4 approved juniors, can drive into pit lane themselves. Guide them to which side you want them to park on. They should park off the painted surfaces.",
+                "3",
+                "SWITCH OFF ON STOP",
+                "Switch off each kart as it comes to a stop. Only use the Emergency Stop button on the controller in an emergency",
+                "4",
+                "STAY SEATED",
+                "Ask everyone to remain seated until all karts are in pit lane. You do not want a kart hitting another kart and knocking someone over as they get out of the go-kart.",
+                "5",
+                "PLUG IN TO CHARGE",
+                "Plug the karts in as soon as you can so they charge between races. This should happen before re-setting belts.",
+                "6",
+                "THEN THEY EXIT",
+                "Once all karts are in pit lane, inform people they can get out of the karts. Help them with the buckle if needed. And guide them onto the yellow side and exit back into the driver zone.",
+                "ALWAYS COMMUNICATING – LOUD – PEOPLE HAVE HELMETS ON",
+                "Pit lane is a slow-speed zone — but it's dangerous, and must be managed carefully.",
+                "Manage pit lane carefully — it's still dangerous.  ·  29 / 51"
+              ],
+              "practicalCriteria": [
+                "Treats the slow-speed zone as still dangerous",
+                "Brings drivers in and manages pit lane safely"
+              ]
+            },
+            {
+              "code": "10",
+              "title": "Kart Speeds and The Controller",
+              "content": [
+                "ONE CONTROLLER.",
+                "FULL CONTROL OF THE RACE.",
+                "13",
+                "KART SPEEDS & THE HAND HELD CONTROLLER",
+                "THE CONTROLLER RUNS THE RACE — KNOW EVERY MODE",
+                "The hand-held controller is how you run a safe, smooth race. Know the speed modes, how to slow or stop karts, and when to use each one. Placeholder detail below — confirm your real speeds and controls and I'll finalise.",
+                "SPEED 1",
+                "Slowest — recovery & getting karts moving safely. 100% safety.",
+                "SPEED 2",
+                "Juniors / nervous drivers — controlled pace.",
+                "SPEED 3",
+                "Standard racing speed for most sessions.",
+                "SPEED 4",
+                "Top speed — qualified drivers, leads & managers.",
+                "USING THE CONTROLLER",
+                "◆  Slow the whole field to Speed 1 when you need to recover a kart or regain control.",
+                "◆  Individual karts can be slowed or stopped — use this rather than stopping the whole race where you can.",
+                "◆  Emergency Stop only in a genuine emergency. Confirm your venue's exact buttons and modes and I'll lock this in.",
+                "Know every mode before you run a race."
+              ],
+              "practicalCriteria": [
+                "Sets kart speeds 1–4 correctly",
+                "Uses the controller confidently for full control of the race"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "After The Race",
+          "modules": [
+            {
+              "code": "11",
+              "title": "The De-Brief",
+              "content": [
+                "YOU ARE THE PRODUCT.",
+                "NOT THE KART. NOT THE SURFACE.",
+                "11",
+                "THE DE-BRIEF – DRIVER ZONE",
+                "THE DE-BRIEF AREA — THE MOST IMPORTANT PART",
+                "1",
+                "BEFORE THEY GET OUT OF THE KART",
+                "\"How'd you go? Did you have fun? What time did you do?\" Start the chat while it's hot.",
+                "2",
+                "TO THE DE-BRIEF",
+                "ZONE",
+                "Help them take helmets off in the Driver Zone. Never make them line up outside the Driver Zone. The De Brief is all about connection.",
+                "3",
+                "PLACE THE",
+                "RESULT",
+                "Help them see where they finished. Compliment what they nailed. Give them tips on how they can improve.",
+                "4",
+                "GAUGE THE VIBE",
+                "This is where you read whether they had a great time and act on it. Chat with them. Understand why they did or didn’t have a great time.",
+                "IF THEY'RE NOT BUZZING",
+                "Underwhelmed or unhappy? Engage with them — don't let it slide past. GMac wants everyone to leave happy.",
+                "Ask yourself: was the race stop / start? Too many stoppages kills the experience.",
+                "Offer credit for a bad race. The Team Lead on shift authorises it — use the term 'Disrupted Race DD/MM/YY'.",
+                "Still need help? Ask your track or team lead to intervene.",
+                "THE CONCEPT OF POWERPLAY",
+                "THEY ARRIVE WITH A SMILE — THEY LEAVE WITH A BIGGER ONE.",
+                "If we skip the de-brief the memory doesn't form — they just drove karts – that is not PowerPlay.",
+                "The feeling people have in the De-Brief is what we sell. If the de-brief doesn’t happen we didn’t deliver the experience. Then the brand didn’t happen.",
+                "The Debrief area is about creating connection and 'bonded moments'. It is real — PowerPlay, when the experience is delivered correctly, turns people into little kids. That’s why people come back.",
+                "The scoreboard will let us know how good you are.  ·  30 / 51"
+              ],
+              "practicalCriteria": [
+                "Gives the result, genuine praise, and one tip",
+                "Owns the delivery — “you are the product”"
+              ]
+            },
+            {
+              "code": "12",
+              "title": "The De-Brief Between Races",
+              "content": [
+                "THE RACE ENDS.",
+                "THE EXPERIENCE DOESN'T.",
+                "12",
+                "THE DE-BRIEF BETWEEN RACES",
+                "KEEP THEM BUZZING BETWEEN HEATS — DON'T LOSE THE CONNECTION",
+                "Between races is still the experience. Multi-race bookings live or die on what you do between heats — keep the energy up, give them something to improve, and make them want the next race.",
+                "KEEP THEM ENGAGED",
+                "◆  Don't let them drift to their phones. Keep talking — energy stays high between heats.",
+                "◆  Quick, specific praise: name the corner they nailed or the time they beat.",
+                "GIVE THEM A GOAL",
+                "◆  One thing to work on next race — brake a touch earlier, look further ahead.",
+                "◆  Tell them their tyres will have more grip next race, so they can go quicker.",
+                "SET UP THE NEXT RACE",
+                "◆  Remind them of the running order / who's ahead — build the rivalry.",
+                "◆  Get them seated and ready in good time so the next heat starts cleanly.",
+                "This page is a starting point — tell me how you run between-race de-briefs at PowerPlay and I'll build it out with your exact wording.",
+                "Keep them buzzing between heats."
+              ],
+              "practicalCriteria": [
+                "Resets and lifts drivers for the next race",
+                "Keeps the experience alive between races"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "Certification",
+          "modules": [
+            {
+              "code": "13",
+              "title": "Rookie Certification",
+              "content": [
+                "KNOW IT.",
+                "PROVE IT.",
+                "LEVEL 2 · ROOKIE",
+                "RUNS RACES — CERTIFICATION",
+                "TYPICAL DURATION:  3 × 3-hour sessions",
+                "ONLINE TEST",
+                "Everything in Trainee",
+                "The verbal briefing + matching the speech to the group",
+                "All seven hand signals and their meaning",
+                "Less is more: react to cues, speak only when needed",
+                "The fast line + reading the kart & driver",
+                "Running the race + the three-chance principle",
+                "Bringing them in, the de-brief, Speeds 1–4 & the controller",
+                "Pass:  100% on safety questions, 90% overall.",
+                "PRACTICAL ASSESSMENT",
+                "Delivers a clear verbal briefing and gets attention",
+                "Matches the pre-race speech to the group",
+                "Straps everyone in (waist strap low); re-checks at pit lane",
+                "Uses signals + a loud voice; calls brake only if needed",
+                "Watches their feet down the ramp; reacts to cues",
+                "Manages a recovery safely from the safe side",
+                "Keeps the race under the stoppage limit",
+                "Runs a genuine de-brief: result, praise, one tip",
+                "SIGNED OFF BY:  Track Manager",
+                "Candidate: ____________________________     Date: ____________________",
+                "Assessor & rank: ________________________     Signature: ____________________",
+                "Rookie → Rally  ·  47 / 51"
+              ],
+              "practicalCriteria": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "rally",
+      "name": "Rally",
+      "order": 3,
+      "duration": "min. 6 × 3-hour sessions as a Rookie",
+      "signoffAuthority": "Track Manager",
+      "onlineTest": {
+        "syllabus": [
+          "Everything in Rookie",
+          "Leading the floor & coaching the coaches",
+          "Front of house helping the track",
+          "Incidents & faults: report it",
+          "The Education Score: what it is and how it moves",
+          "Equipment: track, karts, batteries, barriers",
+          "Pass:  100% on safety questions, 90% overall."
+        ],
+        "passRule": "100% on safety questions, 90% overall."
+      },
+      "phases": [
+        {
+          "phase": "The Wider Team and Kit",
+          "modules": [
+            {
+              "code": "01",
+              "title": "Front Of House — Helping The Track",
+              "content": [
+                "ONE TEAM.",
+                "ONE EXPERIENCE.",
+                "14",
+                "FRONT OF HOUSE: HELPING THE TRACK",
+                "ONE TEAM — FRONT OF HOUSE AND TRACK DELIVER THE EXPERIENCE TOGETHER",
+                "Front of House and the Track Team are one team. When you're not with a customer, your eyes and hands help the track deliver the experience.",
+                "SET UP THE RACE",
+                "◆  Put notes in every race: which groups are with who, who's getting out, who's staying in.",
+                "◆  Take people over at the right time — with 5 minutes left on the race clock everyone should be seated and the verbal briefing starting.",
+                "◆  Start the heat if the Track Team have forgotten to.",
+                "WATCH & COMMUNICATE",
+                "◆  Note anyone struggling on track; radio the Track Team if you think they've missed it.",
+                "◆  One FOH person can help on track if a race is struggling — e.g. a Kids Birthday or Junior race.",
+                "◆  Call out any kart stopped on the ramp straight away.",
+                "◆  Listen for noise — a bang or a barrier hit, note who and why. Same person hitting barriers? Tell the team they're struggling.",
+                "INCIDENTS & THE DE-BRIEF",
+                "◆  Watch for incidents and respond quickly — for a major incident, meet the guest over at the Driver Zone.",
+                "◆  Help take helmets off and complete the de-brief if needed.",
+                "◆  Help fit helmets when the Track Team is busy.",
+                "◆  Talk to customers about their experience, show them the results screens, and encourage podium photos.",
+                "◆  Keep the on-track team hydrated, and push karts into pit lane for Kids/Junior races if you have time.",
+                "When you're free, help the track."
+              ],
+              "practicalCriteria": [
+                "Works front of house and track as one team",
+                "Steps between roles to keep the experience flowing"
+              ]
+            },
+            {
+              "code": "02",
+              "title": "The Equipment",
+              "content": [
+                "THE BEST KIT IN THE WORLD.",
+                "THAT'S NOT A SLOGAN.",
+                "15",
+                "THE EQUIPMENT",
+                "THE INVESTMENT & CONCEPT — THE BEST WE COULD FIND",
+                "THE TRACK",
+                "From Italy — far exceeds Australian safety standards. Safety is No. 1.",
+                "~200m long.",
+                "Designed for a 20-second lap so you get more chances to improve.",
+                "Surface is purposely slippery.",
+                "THE KARTS",
+                "From France, fully electric.",
+                "Seat and pedals both move. Highly adjustable.",
+                "Karts 1 & 2 have a larger seat.",
+                "~220kg each kart before the driver gets in.",
+                "THE INVESTMENT & CONCEPT",
+                "$750K+ — track + karts together.",
+                "The best of everything, sourced worldwide. Safety is No. 1.",
+                "Huge scoreboard — it's fun, but it's also competitive. Everyone wants to beat someone.",
+                "Why is the track slippery? GMac wanted PowerPlay to feel a bit like driving a world rally car on snow or gravel — a taste of what he felt across nearly 30 years in the co-driver's seat, competing all over the world. Things that are a challenge are way more fun — being slippery means technique is rewarded, and it lets you educate people on how to do it.",
+                "The best equipment we could find anywhere.  ·  34 / 51",
+                "BUILT IN-HOUSE.",
+                "BECAUSE NOTHING ELSE CUT IT.",
+                "15",
+                "THE EQUIPMENT",
+                "BATTERIES, BARRIERS, CHARGING & PUSHING A KART",
+                "OUR BATTERIES",
+                "Two per kart. Lithium Iron Phosphate (LiFePO4).",
+                "Developed in-house because nothing else could provide what we wanted.",
+                "Safer than normal lithium, self-extinguishing. Could steam if it fails, unlikely, yet will never catch fire.",
+                "BARRIERS & CHARGING",
+                "PowerPlay designed rubber & metal barriers.",
+                "To increase safety we developed our own Australian-made rubber and metal barriers.",
+                "Italian chargers, three-phase power. Plugged in = won't drive.",
+                "PUSHING A KART",
+                "Keep the wheels straight when you first start to push — it makes it easier. Then turn",
+                "One hand on the roll bar, one on the steering wheel. Never just behind.",
+                "Use the opportunity whilst pushing to talk and engage with the customer.",
+                "$750K+ of the best equipment in the world. Look after it like it's yours — it's what makes the PowerPlay experience possible. Report damaged karts or barriers immediately. Safety is our number 1 priority.",
+                "Built in-house — the best we could find.  ·  35 / 51"
+              ],
+              "practicalCriteria": [
+                "Knows the track, karts, batteries and barriers",
+                "Handles and maintains equipment correctly"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "Standards and The Score",
+          "modules": [
+            {
+              "code": "03",
+              "title": "Incidents and Equipment Faults",
+              "content": [
+                "SAFETY FIRST.",
+                "ALWAYS REPORT IT.",
+                "16",
+                "INCIDENTS & EQUIPMENT FAULTS",
+                "REPORT IT · REVIEW IT · STOP IT HAPPENING AGAIN",
+                "Every incident and every fault gets reported. It's how we keep people safe, protect the experience, and stop the same thing happening twice. When in doubt, report it. Always review and provide solutions.",
+                "REPORT",
+                "Crashes, injuries, near-misses — and any equipment fault (kart, battery, barrier, charger). Capture what happened, when, who, the kart number, and what you did. Tell your Team Lead / Manager straight away.",
+                "REVIEW",
+                "Management reviews what happened and why — was it education, the track, the equipment, or the process? Agree what changes need to be made so it doesn't recur. Major incidents escalate to Daymon and GMac. No pointing fingers, yet we can always learn what we can do better.",
+                "RECORD & CLOSE",
+                "Log it through the venue's reporting process, take faulty karts offline until cleared, and close the loop — confirm the fix is done and the team knows. Communication is key. The Venue Management team owns the process.",
+                "HOLDING PAGE",
+                "The venue's full incident & fault reporting process — the form, who's notified, and timeframes — will be added here. Until then: report every incident and fault to your Team Lead or Manager, and don't put a questionable kart back on track.",
+                "When in doubt, report it.  ·  37 / 51"
+              ],
+              "practicalCriteria": [
+                "Spots incidents and faults; safety first, always reports",
+                "Keeps the experience moving while reporting"
+              ]
+            },
+            {
+              "code": "04",
+              "title": "The Education Score",
+              "content": [
+                "THE NUMBER THAT",
+                "MEASURES THE EXPERIENCE.",
+                "17",
+                "THE EDUCATION SCORE",
+                "THE NUMBER THAT TELLS US HOW WELL WE'RE EDUCATING",
+                "The Education Score is how we measure whether we're really educating our customers. Good education means fewer spins, fewer stoppages, less kart damage — and bigger smiles. The score keeps us honest.",
+                "WHO OWNS IT & HOW IT WORKS",
+                "Ultimately owned by the Venue Manager — managed day-to-day with the Track Manager & assistants.",
+                "Monitor who needs more training before it shows up on track. Manage action plans for feedback and training.",
+                "An Education Score above 2 across a fortnight → submit a report: why, and what you're doing about it. You must provide an action plan.",
+                "Roster accordingly so more training can be conducted on shift.",
+                "HOW TO MOVE IT",
+                "Educate harder on the briefing and trackside — most of the score is won there.",
+                "Run education races in quiet times to lift the team and the track.",
+                "Check the tyre condition — when the tyres shine, there’s limited grip, which means there’s limited education happening.",
+                "Monitor the track and ensure that the grip levels are at the required standard for consistent laps. Grip tape can be applied to alter the track if required.",
+                "VENUE REPORTING",
+                "The Venue Management team will report monthly on the things that measure the experience: the education score, word of mouth, and the number of incidents. If the score is above 2 for the fortnight, then an emergency education report will be submitted with a plan on how to correct.",
+                "Good education = bigger smiles.  ·  38 / 51"
+              ],
+              "practicalCriteria": [
+                "Explains what the Education Score is and how it moves",
+                "Links good education to fewer spins, fewer stoppages, bigger smiles"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "Certification",
+          "modules": [
+            {
+              "code": "05",
+              "title": "Rally Certification",
+              "content": [
+                "KNOW IT.",
+                "PROVE IT.",
+                "LEVEL 3 · RALLY",
+                "TRACK LEAD — CERTIFICATION",
+                "TYPICAL DURATION:  min. 6 × 3-hour sessions as a Rookie",
+                "ONLINE TEST",
+                "Everything in Rookie",
+                "Leading the floor & coaching the coaches",
+                "Front of house helping the track",
+                "Incidents & faults: report it",
+                "The Education Score: what it is and how it moves",
+                "Equipment: track, karts, batteries, barriers",
+                "Pass:  100% on safety questions, 90% overall.",
+                "PRACTICAL ASSESSMENT",
+                "Speed 4 qualified: 2 races, 0 spins, 6 laps under the Speed 4 time",
+                "Leads a shift, observed by the Track Manager",
+                "Coaches a Rookie or Trainee through a session",
+                "Handles a stoppage or incident calmly and positively",
+                "Steps in when a race struggles; keeps it flowing",
+                "Models PRACE and Respect · Help · Interact",
+                "SIGNED OFF BY:  Track Manager",
+                "Candidate: ____________________________     Date: ____________________",
+                "Assessor & rank: ________________________     Signature: ____________________",
+                "Rally → WRC  ·  48 / 51"
+              ],
+              "practicalCriteria": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "wrc",
+      "name": "WRC",
+      "order": 4,
+      "duration": "min. 3 months as a Rally",
+      "signoffAuthority": "Senior Track Manager (State) and/or Daymon & GMac",
+      "onlineTest": {
+        "syllabus": [
+          "Everything in Rally, plus all of Part Two",
+          "Incidents & faults: report, review, record & close",
+          "Education Score: ownership + the >2 / fortnight report",
+          "Track & karts: slippery by design; grip tape (TM/ATM/VM only)",
+          "Roles & ownership: VM, TM/ATM, Track Leads",
+          "Standards: Speed 4 monthly, race once a fortnight",
+          "Pass:  100% on safety questions, 90% overall."
+        ],
+        "passRule": "100% on safety questions, 90% overall."
+      },
+      "phases": [
+        {
+          "phase": "Manage The Operation",
+          "modules": [
+            {
+              "code": "01",
+              "title": "Part Two — Venue Management Team",
+              "content": [
+                "PART TWO",
+                "For the Venue\nManagement Team.",
+                "The pages that follow are owned by the Venue Manager, Track Manager, Assistant Track Manager and Leads. Everyone is welcome to read them — but this team is accountable for managing the track, the karts, the standards and the score that protect the experience.",
+                "1",
+                "KEEP PEOPLE SAFE",
+                "2",
+                "DELIVER THE EXPERIENCE",
+                "Owned by the venue management team.  ·  36 / 51"
+              ],
+              "practicalCriteria": [
+                "Understands the move from delivering to owning the operation",
+                "Knows what the Venue Management Team is responsible for"
+              ]
+            },
+            {
+              "code": "02",
+              "title": "Maintaining The Track and Karts",
+              "content": [
+                "THE TRACK IS EVERYTHING.",
+                "SLIPPERY BY DESIGN.",
+                "18",
+                "MAINTAINING THE TRACK & KARTS",
+                "TM, ATM & VM OWN THIS — IT IS THE EXPERIENCE",
+                "Without the track and the karts, there is no experience. Keeping them in the right shape is the responsibility of the Track Manager, the Assistant Track Manager and the Venue Manager. The track is meant to be slippery — that's how GMac designed it.",
+                "SLIPPERY BY DESIGN",
+                "Sliding isn't out of control — it's a skill customers love when they learn it. Watch their faces when they nail a drift.",
+                "Never try it on the open road — but the control transfers if they ever get into a real-life situation in a car.",
+                "Manage for some slide. A grippy track that drives itself isn't the experience. You will need to scrub rubber off the track or arrange for it to be ground or polished.",
+                "WHEN THE TYRES SHINE",
+                "Poor education polishes the tyres — braking late, wheel-spin, sliding all the way through.",
+                "Shiny tyres = less grip = your team's job trackside gets brutal.",
+                "Get Tyres Back by driving some races properly and / or fitting some grip tape in crucial locations.",
+                "Extra kart damage is poor education too. Fix the education first.",
+                "GRIP TAPE — TRACK MANAGER & ATM ONLY & VENUE MANAGER",
+                "Place it strategically: on the entry to a corner to help braking or through the middle of the corner where you slide, and if more is needed on the exit of the corner to catch a kart as it slides on the exit.",
+                "It wears down over time — monitor lap times and rubber build up on the edge of the track.",
+                "Advise Daymon whenever it's applied to your track.",
+                "Concerned? Escalate and create a plan to fix. Too much grip → Daymon and/or GMac, agree a plan, and you can propose a clean / grind / polish.",
+                "Slippery by design — that's GMac's intent.  ·  39 / 51"
+              ],
+              "practicalCriteria": [
+                "Explains why the track is “slippery by design”",
+                "Applies the grip-tape strategy (TM/ATM/VM only)",
+                "Keeps track and karts to standard"
+              ]
+            },
+            {
+              "code": "03",
+              "title": "How We Run It — Who Owns What",
+              "content": [
+                "YOU ARE THE PRODUCT.",
+                "DELIVERY IS THE SECRET.",
+                "19",
+                "HOW WE RUN IT – WHO OWNS WHAT?",
+                "DELIVERY IS THE SECRET — WHO OWNS WHAT",
+                "The way we deliver the experience is the secret. If the team aren't engaged and helping people go as fast as they want to go — the experience never happened. Be proactive. Safety and the Experience are the priorities.",
+                "1",
+                "KEEP PEOPLE SAFE",
+                "2",
+                "DELIVER THE EXPERIENCE",
+                "VENUE MANAGER",
+                "Understands every aspect of what makes the track and the experience perfect.",
+                "Manages Front of House Team Leads becoming Speed 4 approved within a month of being appointed.",
+                "Owns the Education Score — reports on it and develops plans to improve it.",
+                "Reviews incidents on track with the Track Manager.",
+                "Reviews Word of Mouth marketing trends in venue.",
+                "TRACK MGR & ATM",
+                "Ultimately responsible for the Track and Karts. Safety first.",
+                "100% Safety 100% of the time.",
+                "Ensure the team are confident to deliver education and know what to look for.",
+                "The only ones who apply grip tape.",
+                "Assistant owner of the education score. Must be Speed 4 qualified.",
+                "Review incidents with the Venue Manager. Create Action Plans and learnings.",
+                "TRACK LEADS",
+                "Set the example. Must know how to drive to coach.",
+                "The experience lives or dies with the person leading those in front of the customer.",
+                "Must be Speed 4 approved when appointed to Track Lead. Needs to do 2 races 0 spins, 6 laps at Speed 4 time to qualify as Track Lead.",
+                "Any questions? Escalate them. Don't wait to be told.",
+                "If the team isn't engaged, it never happened.  ·  40 / 51",
+                "KEEP PEOPLE SAFE.",
+                "DELIVER THE EXPERIENCE.",
+                "19",
+                "HOW WE RUN IT",
+                "STANDARDS & STAYING SHARP",
+                "EDUCATION SCORE & REPORTING",
+                "Ultimately owned by the Venue Manager — day-to-day with the TM & assistants (see its own page).",
+                "Monitor who needs more training before it shows up on track.",
+                "An Education Score of 2 or above across a fortnight → submit a report: why, and what's being done about it. To be corrected by end of the following month.",
+                "SPEED 4 — LEADS & MANAGERS",
+                "Track Leads, TM & ATM must be Speed 4 qualified prior to being appointed.",
+                "Each month: 2 races, 0 spins, 6 laps under the Speed 4 time — submit that report to the VM.",
+                "Team Leads: Speed 4 approved within one month of becoming a lead — VM manages this.",
+                "One weekend shift a fortnight to keep the role. Away longer than 4 weeks → the role is re-allocated.",
+                "STAY SHARP & TALK ABOUT WHAT MATTERS",
+                "Race at least once a fortnight — management team keeps skills sharp and checks the track is at the right level, so the management team can discuss it.",
+                "Education races, you can drive on shift in quiet times — as long as it's genuinely for education, and noted as such in the computer race notes.",
+                "Pizza & Play is your chance to have fun, bond with team and share skills — helping each other as a team matters as much as helping customers. It is so important for the culture of your venue. GMac wants you to share in his passion and enjoy the experience hence he closes the store early once a month so you can all have fun – please respect this opportunity.",
+                "The experience — safety, track, karts, education — is the number one thing in every team meeting. Without it, nothing else matters. Get it right and everything else looks after itself.",
+                "Be proactive about the experience — nothing else matters.  ·  41 / 51"
+              ],
+              "practicalCriteria": [
+                "Knows who owns what: VM, TM/ATM, Track Leads",
+                "Applies the standards: Speed 4 monthly, race once a fortnight"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "The Team and Roles",
+          "modules": [
+            {
+              "code": "04",
+              "title": "The Track Team — Structure and Reporting",
+              "content": [
+                "ONE TEAM.",
+                "ONE MACHINE.",
+                "THE TRACK TEAM",
+                "STRUCTURE, REPORTING & WHERE THE ACADEMY FITS",
+                "Who reports to whom — and where each role sits on the PowerPlay Academy ladder.",
+                "VM",
+                "VENUE MANAGER   ·   RUNS THE VENUE",
+                "Owns the Education Score and the venue. The Track Manager reports here.",
+                "TM",
+                "TRACK MANAGER   ·   REPORTS TO VENUE MANAGER",
+                "The go-to for Leads and attendants — owns the track, the karts and training.",
+                "ACADEMY: WRC",
+                "ATM",
+                "ASSISTANT TRACK MANAGER   ·   REPORTS TO TRACK MANAGER",
+                "Head decision-maker and main contact on the Track Manager’s days off.",
+                "ACADEMY: WRC",
+                "TL",
+                "TRACK LEADS   ·   LEAD THE FLOOR",
+                "Set the example in front of the customer; coach the coaches.",
+                "ACADEMY: RALLY",
+                "TA",
+                "TRACK ATTENDANTS & JUNIORS   ·   RUN THE RACES",
+                "Deliver the experience — briefing to de-brief.",
+                "ACADEMY: TRAINEE → ROOKIE",
+                "ALONGSIDE THE TRACK TEAM",
+                "Customer Experience Squad — front of house: the first hello and the last goodbye. One team with the track.",
+                "Kart Maintenance Technician — services and maintains the karts with the TM & ATM.",
+                "Escalation — Track Operations Manager / Senior Track Manager (State) → Daymon & GMac.",
+                "One team. One machine.  ·  42 / 51"
+              ],
+              "practicalCriteria": [
+                "Explains the track team structure and reporting lines"
+              ]
+            },
+            {
+              "code": "05",
+              "title": "Track Manager — Role",
+              "content": [
+                "THE GO-TO",
+                "FOR THE FLOOR.",
+                "TRACK MANAGER",
+                "REPORTS TO: VENUE MANAGER  ·  ACADEMY LEVEL: WRC",
+                "The go-to person for Track Leads and attendants. Still hands-on — handles attendant and lead duties when needed.",
+                "SAFETY & STANDARDS",
+                "Safety is the top priority — never compromise on established procedures.",
+                "Set and uphold the standard for Leads and attendants.",
+                "TRAINING — NEVER-ENDING",
+                "Run the training program; there’s always something to improve.",
+                "Update the VM on staff progress — it drives rostering.",
+                "Spend time educating staff on driving techniques.",
+                "THE KARTS",
+                "Maintain all electric karts; follow the Kart Maintenance Schedule.",
+                "Document every shift on the maintenance sheets — plan part replacement ahead.",
+                "THE TRACK",
+                "Manage grip levels and speed cutoffs — challenging yet safe.",
+                "Resolve track and venue faults; coordinate repairs.",
+                "THE SYSTEMS",
+                "Clubspeed — purchase orders, stock reports, service notes & part life.",
+                "Connecteam — resolve every kart/track fault report; opening & closing checklists.",
+                "VENUE PRESENTATION",
+                "Driver Zone, Pit Lane and Maintenance Area at PowerPlay standard.",
+                "Unsure? Ask: does it make it more fun or more safe? If not, we don’t do it.",
+                "More fun or more safe — or we don’t do it.  ·  43 / 51"
+              ],
+              "practicalCriteria": [
+                "Describes the Track Manager’s responsibilities and ownership"
+              ]
+            },
+            {
+              "code": "06",
+              "title": "Assistant Track Manager — Role",
+              "content": [
+                "SECOND IN",
+                "COMMAND.",
+                "ASSISTANT TRACK MANAGER",
+                "REPORTS TO: TRACK MANAGER  ·  ACADEMY LEVEL: WRC",
+                "Works alongside the Track Manager — and is the head decision-maker on the TM’s days off.",
+                "LEADING SHIFTS",
+                "Head decision-maker and main point of contact on the TM’s days off.",
+                "Think ahead — be prepared and aware of what’s coming up.",
+                "THE STANDARD",
+                "Safety and fun first, for every customer.",
+                "Lead the way with Juniors and Leads — that’s how you earn respect.",
+                "TRAINING",
+                "Lead the training program day-to-day; give feedback.",
+                "Use your track knowledge to educate others — customer education and safety.",
+                "KARTS & TRACK",
+                "Work with the TM and the Kart Maintenance Technician on servicing.",
+                "Report kart and track anomalies; follow up until resolved.",
+                "THE SYSTEMS",
+                "Clubspeed — purchase orders, stock reports, service notes.",
+                "Connecteam — follow up every fault report with the TM.",
+                "VENUE PRESENTATION",
+                "Keep the track, Driver Zone, Pit Lane and Maintenance Area clean.",
+                "Opening and closing checklists — follow up the notes.",
+                "Ready on the days that matter.  ·  44 / 51"
+              ],
+              "practicalCriteria": [
+                "Describes the Assistant Track Manager’s responsibilities and support role"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "Certification",
+          "modules": [
+            {
+              "code": "07",
+              "title": "WRC Certification",
+              "content": [
+                "KNOW IT.",
+                "PROVE IT.",
+                "LEVEL 4 · WRC",
+                "TRACK MANAGER — CERTIFICATION",
+                "TYPICAL DURATION:  min. 3 months as a Rally",
+                "ONLINE TEST",
+                "Everything in Rally, plus all of Part Two",
+                "Incidents & faults: report, review, record & close",
+                "Education Score: ownership + the >2 / fortnight report",
+                "Track & karts: slippery by design; grip tape (TM/ATM/VM only)",
+                "Roles & ownership: VM, TM/ATM, Track Leads",
+                "Standards: Speed 4 monthly, race once a fortnight",
+                "Pass:  100% on safety questions, 90% overall.",
+                "PRACTICAL ASSESSMENT",
+                "Maintains Speed 4 monthly (2 races, 0 spins, 6 laps under the time)",
+                "Runs an incident review and writes an action plan",
+                "Manages the Education Score; reports if >2 / fortnight",
+                "Develops and signs off Leads",
+                "Applies the grip-tape strategy; advises Daymon",
+                "Reports monthly: education score, word of mouth, incidents",
+                "SIGNED OFF BY:  Senior Track Manager (State) and/or Daymon & GMac",
+                "Candidate: ____________________________     Date: ____________________",
+                "Assessor & rank: ________________________     Signature: ____________________",
+                "WRC → Champion  ·  49 / 51"
+              ],
+              "practicalCriteria": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "key": "champion",
+      "name": "Champion",
+      "order": 5,
+      "duration": "By invitation",
+      "signoffAuthority": "Daymon & GMac only",
+      "onlineTest": {
+        "syllabus": [],
+        "passRule": "By standards review with Daymon & GMac."
+      },
+      "phases": [
+        {
+          "phase": "Bring It Together",
+          "modules": [
+            {
+              "code": "01",
+              "title": "Thats The Playbook — Recap",
+              "content": [
+                "THAT'S THE PLAYBOOK.",
+                "REMEMBER",
+                "We don't sell go-karting.\nWe sell the feeling.",
+                "Educate well and the race runs itself — fewer spins, fewer stoppages, bigger smiles. Every detail matters. No shortcuts. Education is the key. Bigger smiles are the reward.",
+                "P",
+                "Passionate",
+                "R",
+                "Respectful",
+                "A",
+                "Accountable",
+                "C",
+                "Committed",
+                "E",
+                "Empowering",
+                "Your two priorities, every shift: 1  Keep people safe    2  Deliver the experience",
+                "LET'S RACE.",
+                "Now go deliver it.",
+                "We sell the feeling — and you're the one who creates it."
+              ],
+              "practicalCriteria": [
+                "Demonstrates command of the whole playbook, level to level",
+                "Can teach any part of it to others"
+              ]
+            }
+          ]
+        },
+        {
+          "phase": "Certification and Beyond",
+          "modules": [
+            {
+              "code": "02",
+              "title": "Champion Certification",
+              "content": [
+                "KNOW IT.",
+                "PROVE IT.",
+                "LEVEL 5 · CHAMPION",
+                "SENIOR LEADERS — CERTIFICATION",
+                "TYPICAL DURATION:  By invitation · proven record",
+                "KNOWLEDGE & STANDARDS",
+                "Cross-venue standards & auditing the experience",
+                "Developing and certifying Track Managers",
+                "Education Score trends across venues",
+                "Word of mouth and the measures that matter",
+                "Living PRACE and the GMac Standard",
+                "Pass:  By standards review with Daymon & GMac.",
+                "PRACTICAL ASSESSMENT",
+                "Proven record: venues consistently deliver the experience",
+                "Low Education Scores & strong word of mouth across venues",
+                "Develops and certifies Track Managers",
+                "Audits and lifts standards across the group",
+                "Sets the example others follow",
+                "SIGNED OFF BY:  Daymon & GMac only",
+                "Candidate: ____________________________     Date: ____________________",
+                "Assessor & rank: ________________________     Signature: ____________________",
+                "Champion → GMac Standard  ·  50 / 51"
+              ],
+              "practicalCriteria": []
+            },
+            {
+              "code": "03",
+              "title": "The GMac Standard",
+              "content": [
+                "THE GOLD",
+                "STANDARD.",
+                "THE GMAC STANDARD",
+                "THE GOLD STANDARD — DAYMON & GMAC",
+                "★",
+                "Not applied for — recognised by Daymon & GMac.",
+                "The gold standard of delivering the experience: bonded moments every time, mentors others, lives PRACE, and is the benchmark the whole venue is measured against.",
+                "The standard we all chase.  ·  51 / 51"
+              ],
+              "practicalCriteria": []
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

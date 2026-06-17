@@ -1,0 +1,16 @@
+{
+  "_note": "Sample only. Author full banks per level, then load into the test_questions table (see DEVELOPER_BRIEF). Each level's syllabus is in curriculum.json -> levels[].onlineTest.syllabus.",
+  "trainee": [
+    { "question": "What are PowerPlay's two priorities?", "is_safety": true, "options": ["Go fast and look cool", "Keep people safe & deliver the experience", "Sell more races", "Win every race"], "correct_index": 1 },
+    { "question": "A customer says their helmet is too tight. You…", "is_safety": true, "options": ["Loosen it until comfy", "Tell them to deal with it", "Show it still comes off & explain it must be snug to be safe", "Swap to a smaller helmet"], "correct_index": 2 },
+    { "question": "Where should the waist belt sit?", "is_safety": true, "options": ["Low across the waist", "Across the chest", "Wherever's comfy", "It's optional"], "correct_index": 0 },
+    { "question": "The customer is the…", "is_safety": false, "options": ["Least important part", "Undisputed number 1", "Same as everyone", "Reason we're tired"], "correct_index": 1 },
+    { "question": "Walking customers to the karts, you guide them to…", "is_safety": true, "options": ["Walk anywhere", "Walk on the yellow", "Run", "Stand on the plastic"], "correct_index": 1 }
+  ],
+  "rookie": [
+    { "question": "The rule on shouting in a race?", "is_safety": false, "options": ["Shout 'brake' every corner", "Read the play; speak only when needed", "Never speak", "Only for juniors"], "correct_index": 1 },
+    { "question": "A kart spins repeatedly — after how many chances do you bring them in?", "is_safety": true, "options": ["One", "Three", "Ten", "Never"], "correct_index": 1 },
+    { "question": "On the arrows, RED means…", "is_safety": false, "options": ["Flat out", "Control power", "Brake zone", "Stop"], "correct_index": 2 },
+    { "question": "During a recovery you stand…", "is_safety": true, "options": ["In front of the kart", "On the safe side", "Anywhere", "On the racing line"], "correct_index": 1 }
+  ]
+}
