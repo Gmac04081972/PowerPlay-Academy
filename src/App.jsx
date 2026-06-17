@@ -235,6 +235,8 @@ function Dashboard({ profile, go, flash }) {
   }, [profile.id]);
   useEffect(()=>{ refresh(); },[refresh]);
 
+  const [showLog, setShowLog] = useState(false);
+
   if (!d) return <Shell profile={profile} go={go}><Loading /></Shell>;
 
   const cc = certCount(profile, d);
@@ -245,7 +247,6 @@ function Dashboard({ profile, go, flash }) {
   const testPassed = !!d.passed[aLevel.key];
   const signedCount = mods.filter(m=>d.signs[m.id]?.outcome==="competent").length;
   const isCert = !!d.cert[aLevel.key];
-  const [showLog, setShowLog] = useState(false);
 
   return (
     <Shell profile={profile} go={go}>
