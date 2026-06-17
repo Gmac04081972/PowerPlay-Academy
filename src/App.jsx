@@ -38,6 +38,7 @@ const canSignoff=(r) => ["super_admin","track_manager","assistant_tm"].includes(
 
 const LEVELS = curriculum.levels;
 const ICONS  = { trainee: Shield, rookie: Flag, rally: Award, wrc: Crown, champion: Trophy, gmac: Star };
+const VENUES = ["Joondalup","Bibra Lake","Malaga","Welshpool","Moorabbin","Braybrook","Northmead","Campbellfield"];
 const modId  = (lk, code) => `${lk}-${code}`;
 const allMods= (lvl) => lvl.phases.flatMap(p => p.modules.map(m => ({ ...m, id: modId(lvl.key, m.code), phase: p.phase })));
 const fmt    = (iso) => { if (!iso) return ""; const d = new Date(iso); return d.toLocaleDateString("en-AU",{day:"numeric",month:"short",year:"numeric"})+" · "+d.toLocaleTimeString("en-AU",{hour:"numeric",minute:"2-digit"}); };
@@ -161,7 +162,8 @@ const MobileNavItem = ({ icon, label, onClick }) => (
     {icon}<span>{label}</span>
   </button>
 );
-const RolePill = ({ role }) => (
+const GMAC_EMAILS = ["daymon@powerplay.com.au","glenn@powerplay.com.au"];
+const RolePill = ({ role, isGmac }) => (
   <span style={{fontSize:10,fontWeight:800,letterSpacing:1.5,padding:"3px 10px",borderRadius:99,background:"rgba(212,255,0,.12)",color:B.lime,textTransform:"uppercase"}}>
     {ROLES[role]?.label || role}
   </span>
@@ -190,7 +192,7 @@ function SignIn() {
             <Label>Your email</Label>
             <input value={email} onChange={e=>setEmail(e.target.value)} placeholder="you@powerplay.com" style={inputStyle} onKeyDown={e=>e.key==="Enter"&&email&&auth.signInWithEmail(email).then(()=>setSent(true))} />
             <LimeBtn disabled={!email} onClick={()=>auth.signInWithEmail(email).then(()=>setSent(true))} style={{marginTop:12}}>Send sign-in link</LimeBtn>
-            <div style={{marginTop:16,fontSize:12,color:B.mute,textAlign:"center",lineHeight:1.6}}>Your account is created by your Track Manager.<br />First time? Ask them to set you up.</div>
+            <div style={{marginTop:16,fontSize:12,color:B.mute,textAlign:"center",lineHeight:1.6}}>Your account has been set up for you.<br />Enter your email to receive a sign-in link.</div>
           </Card>
         )}
       </div>
@@ -209,12 +211,19 @@ function CreateProfile({ user, onDone }) {
         <PageTitle>Start your climb.</PageTitle>
         <PageSub style={{marginBottom:24}}>Your record is created now. Every module, test and sign-off is dated and saved here permanently.</PageSub>
         <Card>
-          {[["full_name","Full name","Jordan Smith"],["email","Email","jordan@powerplay.com"],["venue","Venue (optional)","Perth"]].map(([k,l,ph])=>(
+          {[["full_name","Full name","Jordan Smith"],["email","Email","jordan@powerplay.com"]].map(([k,l,ph])=>(
             <div key={k} style={{marginBottom:14}}>
               <Label>{l}</Label>
               <input value={f[k]} onChange={e=>setF({...f,[k]:e.target.value})} placeholder={ph} style={inputStyle} />
             </div>
           ))}
+          <div style={{marginBottom:14}}>
+            <Label>Venue</Label>
+            <select value={f.venue} onChange={e=>setF({...f,venue:e.target.value})} style={{...inputStyle,appearance:"none",cursor:"pointer"}}>
+              <option value="">Select your venue…</option>
+              {VENUES.map(v=><option key={v} value={v}>{v}</option>)}
+            </select>
+          </div>
           <LimeBtn disabled={!ok} onClick={()=>profiles.create(f).then(onDone)}>Begin training</LimeBtn>
         </Card>
       </div>
@@ -473,7 +482,13 @@ function Roster({ profile, go, flash }) {
   const [people, setPeople] = useState(null);
   const [q, setQ] = useState("");
   useEffect(()=>{ (async()=>{ const {data}=await profiles.list(); setPeople(data||[]); })(); },[]);
-  const list=(people||[]).filter(u=>!q||(u.full_name+(u.email||"")+(u.venue||"")).toLowerCase().includes(q.toLowerCase()));
+  const myVenue = profile.venue;
+  const isAdmin = ["super_admin","venue_manager","assistant_vm"].includes(profile.role);
+  const list=(people||[]).filter(u=>{
+    const venueOk = isAdmin || !myVenue || u.venue===myVenue;
+    const searchOk = !q||(u.full_name+(u.email||"")+(u.venue||"")).toLowerCase().includes(q.toLowerCase());
+    return venueOk && searchOk;
+  });
 
   return (
     <Shell profile={profile} go={go}>
@@ -611,29 +626,44 @@ function PersonDetail({ profile, ctx, go, flash }) {
   );
 }
 
-/* ── invite trainee (TM / ATM only) ── */
+/* ── invite / create account (admin, TM, ATM) ── */
 function InviteTrainee({ profile, go, flash }) {
-  const [f, setF] = useState({ full_name:"", email:"", venue: profile.venue||"" });
+  const isSuperAdmin = profile.role === "super_admin";
+  const [f, setF] = useState({ full_name:"", email:"", venue: profile.venue||"", role:"trainee" });
   const [sending, setSending] = useState(false);
   const [done, setDone] = useState(false);
-  const ok = f.full_name.trim() && f.email.trim();
+  const ok = f.full_name.trim() && f.email.trim() && f.venue;
 
   const invite = async () => {
     setSending(true);
-    const { error } = await auth.signInWithEmail(f.email);
-    if (!error) {
-      await profiles.createForOther({ ...f, role:"trainee", created_by: profile.id });
-      setDone(true); flash("Invite sent to "+f.email);
-    } else { flash("Could not send invite — check the email address.","err"); }
+    try {
+      const session = (await import("./lib/api")).auth;
+      const { data: { session: s } } = await (await import("./lib/supabase")).supabase.auth.getSession();
+      const res = await fetch(
+        `${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-user`,
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            "Authorization": `Bearer ${s?.access_token}`,
+            "apikey": import.meta.env.VITE_SUPABASE_ANON_KEY,
+          },
+          body: JSON.stringify({ full_name: f.full_name, email: f.email, venue: f.venue, role: f.role }),
+        }
+      );
+      const data = await res.json();
+      if (data.ok) { setDone(true); flash(`Account created — invite sent to ${f.email}`); }
+      else { flash(data.error || "Something went wrong", "err"); }
+    } catch(e) { flash("Could not create account — check your connection.", "err"); }
     setSending(false);
   };
 
   return (
     <Shell profile={profile} go={go}>
       <BackBtn onClick={()=>go("dash")} />
-      <Eyebrow>Track Manager · {profile.venue||"PowerPlay"}</Eyebrow>
-      <PageTitle>Add a new trainee.</PageTitle>
-      <PageSub style={{marginBottom:24}}>They'll get a sign-in link by email. Their record is created immediately — they log in and start from Level 1.</PageSub>
+      <Eyebrow>{ROLES[profile.role]?.label||profile.role} · {profile.venue||"PowerPlay"}</Eyebrow>
+      <PageTitle>Create an account.</PageTitle>
+      <PageSub style={{marginBottom:24}}>Their account is set up immediately and they receive an invite email. They click the link and land straight in the Academy — no self-registration needed.</PageSub>
       <div style={{maxWidth:420}}>
         {done?(
           <Card>
@@ -646,12 +676,29 @@ function InviteTrainee({ profile, go, flash }) {
           </Card>
         ):(
           <Card>
-            {[["full_name","Full name","Jordan Smith"],["email","Email address","jordan@powerplay.com"],["venue","Venue","Perth"]].map(([k,l,ph])=>(
+            {[["full_name","Full name","Jordan Smith"],["email","Email address","jordan@powerplay.com"]].map(([k,l,ph])=>(
               <div key={k} style={{marginBottom:14}}>
                 <Label>{l}</Label>
                 <input value={f[k]} onChange={e=>setF({...f,[k]:e.target.value})} placeholder={ph} style={inputStyle}/>
               </div>
             ))}
+            <div style={{marginBottom:14}}>
+              <Label>Venue</Label>
+              <select value={f.venue} onChange={e=>setF({...f,venue:e.target.value})} style={{...inputStyle,appearance:"none",cursor:"pointer"}}>
+                <option value="">Select venue…</option>
+                {VENUES.map(v=><option key={v} value={v}>{v}</option>)}
+              </select>
+            </div>
+            <div style={{marginBottom:14}}>
+              <Label>Role</Label>
+              <select value={f.role||"trainee"} onChange={e=>setF({...f,role:e.target.value})} style={{...inputStyle,appearance:"none",cursor:"pointer"}}>
+                <option value="trainee">Trainee</option>
+                <option value="assistant_tm">Assistant Track Manager</option>
+                <option value="track_manager">Track Manager</option>
+                <option value="venue_manager">Venue Manager</option>
+                <option value="assistant_vm">Assistant Venue Manager</option>
+              </select>
+            </div>
             <LimeBtn disabled={!ok||sending} onClick={invite}>{sending?"Sending…":"Send invite"}</LimeBtn>
           </Card>
         )}
