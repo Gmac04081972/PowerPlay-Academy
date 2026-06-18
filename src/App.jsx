@@ -5,6 +5,7 @@ import {
   LogOut, PenLine, Eye, X, Check, AlertCircle, Menu,
 } from "lucide-react";
 import curriculum from "./content/curriculum.json";
+import { MODULES_CONTENT } from "./content/modules.js";
 import sampleBank from "./content/testbank.sample.json";
 import { auth, profiles, progress, tests, signoffs, certs, activity } from "./lib/api";
 
@@ -88,9 +89,10 @@ export default function App() {
       {screen === "signin"         && <SignIn />}
       {screen === "create_profile" && <CreateProfile user={user} onDone={async()=>{ const p=await profiles.me(); setProfile(p); setScreen("dash"); }} />}
       {screen === "dash"           && profile && <Dashboard profile={profile} go={go} flash={flash} />}
-      {screen === "module"         && profile && <ModuleScreen profile={profile} ctx={ctx} go={go} flash={flash} />}
+      {screen === "module"         && profile && <RichModuleScreen profile={profile} ctx={ctx} go={go} flash={flash} />}
       {screen === "test"           && profile && <TestScreen profile={profile} ctx={ctx} go={go} flash={flash} />}
       {screen === "roster"         && profile && <Roster profile={profile} go={go} flash={flash} />}
+      {screen === "matrix"          && profile && <VenueMatrix profile={profile} go={go} />}
       {screen === "person"         && profile && <PersonDetail profile={profile} ctx={ctx} go={go} flash={flash} />}
       {screen === "invite"         && profile && <InviteTrainee profile={profile} go={go} flash={flash} />}
       {toast && <Toast toast={toast} />}
@@ -127,6 +129,7 @@ function Shell({ profile, go, children, plain }) {
           <div className="desktop-nav" style={{display:"flex",alignItems:"center",gap:8}}>
             {creator && <NavBtn icon={<UserPlus size={15}/>} label="Add trainee" onClick={()=>go("invite")} />}
             {(staff||viewer) && <NavBtn icon={<Eye size={15}/>} label="Roster" onClick={()=>go("roster")} />}
+        {["super_admin","venue_manager","track_manager","assistant_tm"].includes(profile?.role) && <NavBtn icon={<Eye size={15}/>} label="Matrix" onClick={()=>go("matrix")} />}
             {profile && <RolePill role={profile.role} />}
             {profile && <NavBtn icon={<LogOut size={15}/>} label="" onClick={()=>auth.signOut()} title="Sign out" />}
           </div>
@@ -538,12 +541,18 @@ function PersonDetail({ profile, ctx, go, flash }) {
   },[person.id]);
   useEffect(()=>{refresh();},[refresh]);
 
-  const signOff = async (level,m,outcome)=>{
-    const initials=window.prompt(`Your initials — signing "${m.title}" as ${outcome==="competent"?"competent":"not yet"}:`,"");
-    if(initials===null) return;
-    await signoffs.sign({profileId:person.id,moduleId:m.id,outcome,assessorName:profile.full_name,initials,label:`${level.name}: ${m.title}`});
-    await refresh();
-    flash(outcome==="competent"?"Signed off as competent.":"Marked not yet competent.");
+  const [sigPending, setSigPending] = useState(null);
+  const signOff = (level,m,outcome) => setSigPending({level,m,outcome});
+  const confirmSign = async(sigName) => {
+    const {level,m,outcome}=sigPending; setSigPending(null);
+    const {data:{session}}=await (await import("./lib/supabase")).supabase.auth.getSession();
+    const res=await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/record-progress`,{
+      method:"POST",headers:{"Content-Type":"application/json","apikey":import.meta.env.VITE_SUPABASE_ANON_KEY,"Authorization":"Bearer "+session?.access_token},
+      body:JSON.stringify({action:"sign_practical",payload:{profile_id:person.id,module_id:m.id,outcome,assessor_name:sigName,initials:sigName.split(" ").map(w=>w[0]).join("").toUpperCase(),notes:"",label:level.name+": "+m.title}})
+    });
+    const r=await res.json();
+    if(r.ok){await refresh();flash(outcome==="competent"?"Signed — timestamp saved permanently.":"Marked not yet.");}
+    else flash(r.error||"Could not save","err");
   };
   const certify = async(level)=>{
     await certs.certify(person.id,level.key,profile.full_name,level.name);
@@ -554,6 +563,7 @@ function PersonDetail({ profile, ctx, go, flash }) {
 
   return (
     <Shell profile={profile} go={go}>
+      {sigPending&&<SignatureModal defaultName={profile.full_name} onSign={confirmSign} onCancel={()=>setSigPending(null)}/>}
       <BackBtn onClick={()=>go("roster")} />
       <div style={{display:"flex",alignItems:"center",gap:16,marginBottom:8}}>
         <Avatar name={person.full_name} size={52}/>
@@ -610,6 +620,7 @@ function PersonDetail({ profile, ctx, go, flash }) {
                 })}
               </div>
               {canCertify&&<div style={{padding:"12px 20px",borderTop:"1px solid rgba(212,255,0,.15)"}}><LimeBtn onClick={()=>certify(level)} small>Certify {level.name} — {person.full_name.split(" ")[0]}</LimeBtn></div>}
+          {!!d.cert[level.key]&&<div style={{padding:"8px 20px 12px"}}><button onClick={()=>downloadCert({personName:person.full_name,levelName:level.name,certifiedDate:fmt(d.cert[level.key]?.certified_at||"").split(" · ")[0]||"",assessorName:d.cert[level.key]?.by_name||profile.full_name,venue:person.venue})} style={{fontSize:12,fontWeight:700,padding:"6px 14px",borderRadius:8,background:"rgba(212,255,0,.1)",color:B.lime,border:"1px solid rgba(212,255,0,.3)",cursor:"pointer"}}>↓ Download certificate</button></div>}
             </div>
           );
         })}
@@ -714,6 +725,227 @@ function InviteTrainee({ profile, go, flash }) {
       </div>
     </Shell>
   );
+}
+
+
+
+/* ══════════════════════════════════════════
+   VENUE MATRIX
+══════════════════════════════════════════ */
+function VenueMatrix({ profile, go }) {
+  const [data, setData] = useState(null);
+  const isAdmin = profile.role === "super_admin";
+  const myVenues = profile.venues || (profile.venue ? [profile.venue] : []);
+  const visibleVenues = isAdmin ? VENUES : myVenues;
+
+  useEffect(() => {
+    (async () => {
+      const { data: people } = await profiles.list();
+      const allProgress = {};
+      for (const p of (people || [])) {
+        const [cert, passed] = await Promise.all([certs.forProfile(p.id), tests.attemptsFor(p.id)]);
+        const passedMap = {};
+        passed.forEach(a => { if (a.passed) passedMap[a.level_key] = true; });
+        allProgress[p.id] = { cert, passed: passedMap };
+      }
+      setData({ people: people || [], allProgress });
+    })();
+  }, []);
+
+  if (!data) return <Shell profile={profile} go={go}><Loading /></Shell>;
+
+  const STATUS = {
+    certified:   { bg:"#1a8f4c", color:"#fff",   label:"✓" },
+    test_done:   { bg:"rgba(212,255,0,.25)", color:B.lime, label:"T" },
+    not_started: { bg:"rgba(255,255,255,.04)", color:"#444", label:"—" },
+  };
+
+  const getStatus = (pid, lk) => {
+    const p = data.allProgress[pid];
+    if (!p) return "not_started";
+    if (p.cert[lk]) return "certified";
+    if (p.passed[lk]) return "test_done";
+    return "not_started";
+  };
+
+  return (
+    <Shell profile={profile} go={go}>
+      <PageTitle>Venue matrix.</PageTitle>
+      <PageSub style={{marginBottom:20}}>Full breakdown per venue. ✓ = certified · T = test passed, practical pending · — = not started.</PageSub>
+      {visibleVenues.map(venue => {
+        const venueStaff = data.people.filter(p =>
+          (p.venues||[]).includes(venue) || p.venue === venue
+        ).filter(p => p.role !== "super_admin");
+        if (!venueStaff.length) return null;
+        return (
+          <div key={venue} style={{marginBottom:32}}>
+            <div style={{fontSize:13,fontWeight:800,letterSpacing:2,color:B.lime,marginBottom:12,textTransform:"uppercase"}}>◆ {venue}</div>
+            <div style={{borderRadius:14,overflow:"hidden",border:"1px solid rgba(255,255,255,.08)"}}>
+              <div style={{display:"grid",gridTemplateColumns:"200px repeat(5,80px)",background:"rgba(255,255,255,.06)"}}>
+                <div style={{padding:"10px 14px",fontSize:11,fontWeight:800,color:B.mute}}>PERSON</div>
+                {LEVELS.map(l=><div key={l.key} style={{padding:"10px 8px",fontSize:11,fontWeight:800,color:B.mute,textAlign:"center"}}>{l.name.slice(0,3).toUpperCase()}</div>)}
+              </div>
+              {venueStaff.map((person,idx)=>(
+                <div key={person.id} style={{display:"grid",gridTemplateColumns:"200px repeat(5,80px)",background:idx%2===0?"rgba(255,255,255,.02)":"transparent",borderTop:"1px solid rgba(255,255,255,.04)"}}>
+                  <button onClick={()=>go("person",{person})} style={{...bareBtn,padding:"10px 14px",justifyContent:"flex-start",width:"100%"}}>
+                    <div style={{minWidth:0}}>
+                      <div style={{fontSize:13,fontWeight:700,color:B.white,overflow:"hidden",textOverflow:"ellipsis",whiteSpace:"nowrap"}}>{person.full_name}</div>
+                      <div style={{fontSize:11,color:B.mute}}>{ROLES[person.role]?.label||person.role}</div>
+                    </div>
+                  </button>
+                  {LEVELS.map(l=>{
+                    const s=STATUS[getStatus(person.id,l.key)];
+                    return <div key={l.key} style={{display:"flex",alignItems:"center",justifyContent:"center"}}>
+                      <div style={{width:32,height:32,borderRadius:8,background:s.bg,color:s.color,display:"flex",alignItems:"center",justifyContent:"center",fontSize:13,fontWeight:800}}>{s.label}</div>
+                    </div>;
+                  })}
+                </div>
+              ))}
+            </div>
+          </div>
+        );
+      })}
+      <div style={{display:"flex",gap:16,marginTop:8,flexWrap:"wrap"}}>
+        {[["✓ Certified","#1a8f4c"],["T Test passed — practical pending","rgba(212,255,0,.4)"],["— Not started","rgba(255,255,255,.12)"]].map(([l,bg])=>(
+          <div key={l} style={{display:"flex",alignItems:"center",gap:8,fontSize:12,color:B.mute}}><div style={{width:24,height:24,borderRadius:6,background:bg}}/><span>{l}</span></div>
+        ))}
+      </div>
+    </Shell>
+  );
+}
+
+/* ══════════════════════════════════════════
+   RICH MODULE SCREEN
+══════════════════════════════════════════ */
+function RichModuleScreen({ profile, ctx, go, flash }) {
+  const { mod, levelKey } = ctx;
+  const level = LEVELS.find(l=>l.key===levelKey);
+  const content = MODULES_CONTENT ? MODULES_CONTENT[levelKey+"-"+mod.code] : null;
+  const [done, setDone] = useState(null);
+  const [ack, setAck] = useState(false);
+
+  useEffect(()=>{ (async()=>{
+    const l=await progress.learnedFor(profile.id);
+    const ts=l[mod.id]; setDone(ts||false); setAck(!!ts);
+  })(); },[mod.id,profile.id]);
+
+  const complete = async () => {
+    const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/record-progress`,{
+      method:"POST",
+      headers:{"Content-Type":"application/json","apikey":import.meta.env.VITE_SUPABASE_ANON_KEY,
+        "Authorization":"Bearer "+(await (await import("./lib/supabase")).supabase.auth.getSession()).data.session?.access_token},
+      body:JSON.stringify({action:"learn_module",payload:{profile_id:profile.id,module_id:mod.id,label:level.name+": "+mod.title}})
+    });
+    const r=await res.json();
+    if(r.ok){flash("Module complete — keep climbing.");go("dash");}
+    else flash(r.error||"Could not save","err");
+  };
+
+  if(done===null) return <Shell profile={profile} go={go}><Loading/></Shell>;
+
+  return (
+    <Shell profile={profile} go={go}>
+      <BackBtn onClick={()=>go("dash")}/>
+      <Eyebrow>{level.name} · {mod.phase}</Eyebrow>
+      <PageTitle>{content?.title||mod.title}</PageTitle>
+      {content?.duration&&<div style={{fontSize:12,color:B.mute,marginBottom:6}}>Estimated time: <b style={{color:B.lime}}>{content.duration}</b></div>}
+      {content?.summary&&<PageSub style={{marginBottom:24}}>{content.summary}</PageSub>}
+      <div style={{maxWidth:720}}>
+        {(content?.keyPoints||[]).map((kp,i)=>(
+          <div key={i} style={{borderRadius:14,padding:20,marginBottom:12,background:i===0?"rgba(212,255,0,.06)":"rgba(255,255,255,.05)",border:"1px solid "+(i===0?"rgba(212,255,0,.2)":"rgba(255,255,255,.08)")}}>
+            <div style={{fontWeight:800,fontSize:15,color:i===0?B.lime:"white",marginBottom:8}}>{kp.heading}</div>
+            <div style={{fontSize:14,color:B.intro,lineHeight:1.7}}>{kp.body}</div>
+          </div>
+        ))}
+        {(content?.expectToKnow||[]).length>0&&(
+          <div style={{borderRadius:14,padding:20,marginTop:8,marginBottom:20,background:"rgba(255,60,80,.06)",border:"1px solid rgba(255,60,80,.2)"}}>
+            <div style={{fontWeight:800,fontSize:13,color:B.red,letterSpacing:1.5,marginBottom:12,textTransform:"uppercase"}}>What you are expected to know</div>
+            {content.expectToKnow.map((e,i)=><div key={i} style={{display:"flex",gap:10,marginBottom:8,fontSize:14,color:B.intro}}><span style={{color:B.red,flexShrink:0}}>◆</span><span>{e}</span></div>)}
+          </div>
+        )}
+        {(mod.practicalCriteria||[]).length>0&&(
+          <div style={{borderRadius:14,padding:20,marginBottom:20,background:"rgba(255,255,255,.04)",border:"1px solid rgba(255,255,255,.1)"}}>
+            <div style={{fontWeight:800,fontSize:13,color:B.mute,letterSpacing:1.5,marginBottom:12,textTransform:"uppercase"}}>Practical assessment — what your assessor will observe</div>
+            {mod.practicalCriteria.map((c,i)=><div key={i} style={{display:"flex",gap:10,marginBottom:8,fontSize:14,color:B.intro}}><span style={{color:B.mute,flexShrink:0}}>☐</span><span>{c}</span></div>)}
+          </div>
+        )}
+        {done?(
+          <div style={{display:"flex",alignItems:"center",gap:8,color:"#1a8f4c",fontWeight:700,fontSize:15}}><CheckCircle2 size={20}/>Completed — {fmt(done).split(" · ")[0]}</div>
+        ):(
+          <>
+            <label style={{display:"flex",gap:10,cursor:"pointer",marginBottom:16,alignItems:"flex-start"}}>
+              <input type="checkbox" checked={ack} onChange={e=>setAck(e.target.checked)} style={{marginTop:3,flexShrink:0}}/>
+              <span style={{fontSize:14,color:B.intro,lineHeight:1.6}}>I have read and understood this module. I am ready to demonstrate this in practice.</span>
+            </label>
+            <LimeBtn disabled={!ack} onClick={complete}>Mark complete</LimeBtn>
+          </>
+        )}
+      </div>
+    </Shell>
+  );
+}
+
+/* ══════════════════════════════════════════
+   DIGITAL SIGNATURE MODAL
+══════════════════════════════════════════ */
+function SignatureModal({ defaultName, onSign, onCancel }) {
+  const [typed, setTyped] = useState(defaultName||"");
+  const preview = typed.trim();
+  return (
+    <div style={{position:"fixed",inset:0,zIndex:100,background:"rgba(0,0,0,.75)",display:"flex",alignItems:"center",justifyContent:"center",padding:20}}>
+      <div style={{width:"100%",maxWidth:440,borderRadius:20,padding:28,background:B.deep,border:"1px solid rgba(255,255,255,.12)"}}>
+        <div style={{fontWeight:800,fontSize:18,marginBottom:4}}>Sign off</div>
+        <div style={{fontSize:13,color:B.mute,marginBottom:20}}>Type your full name — this becomes your digital signature and is saved permanently against this record with a server timestamp.</div>
+        <Label>Your full name</Label>
+        <input value={typed} onChange={e=>setTyped(e.target.value)} placeholder="Type your name to sign…" style={inputStyle} autoFocus/>
+        {preview&&(
+          <div style={{marginTop:16,padding:"16px 20px",borderRadius:12,border:"1px solid rgba(212,255,0,.3)",background:"rgba(212,255,0,.04)"}}>
+            <div style={{fontSize:11,color:B.mute,marginBottom:8,letterSpacing:1}}>SIGNATURE PREVIEW</div>
+            <div style={{fontFamily:"Georgia,serif",fontSize:26,color:B.lime,fontStyle:"italic",letterSpacing:1}}>{preview}</div>
+            <div style={{fontSize:11,color:B.mute,marginTop:6}}>Date: {new Date().toLocaleDateString("en-AU",{day:"numeric",month:"long",year:"numeric"})}</div>
+          </div>
+        )}
+        <div style={{display:"flex",gap:10,marginTop:20}}>
+          <button onClick={onCancel} style={{flex:1,padding:"11px",borderRadius:10,background:"rgba(255,255,255,.08)",color:B.mute,fontWeight:700,border:"none",cursor:"pointer"}}>Cancel</button>
+          <LimeBtn disabled={!preview} onClick={()=>onSign(preview)} style={{flex:2}}>Confirm signature</LimeBtn>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+/* ══════════════════════════════════════════
+   PDF CERTIFICATE
+══════════════════════════════════════════ */
+function downloadCert({personName,levelName,certifiedDate,assessorName,venue}){
+  const html=`<!DOCTYPE html><html><head><meta charset="UTF-8"/><title>PowerPlay Academy Certificate</title>
+<style>*{margin:0;padding:0;box-sizing:border-box;}body{width:297mm;height:210mm;background:#171C3D;color:white;font-family:Arial,sans-serif;display:flex;align-items:center;justify-content:center;}
+.cert{width:100%;height:100%;padding:32px 48px;background:linear-gradient(135deg,#2C3D8F,#1B2566 50%,#171C3D);position:relative;display:flex;flex-direction:column;justify-content:space-between;}
+.corner{position:absolute;width:80px;height:80px;}.tl{top:0;left:0;border-top:4px solid #D4FF00;border-left:4px solid #D4FF00;}
+.tr{top:0;right:0;border-top:4px solid #D4FF00;border-right:4px solid #D4FF00;}.bl{bottom:0;left:0;border-bottom:4px solid #D4FF00;border-left:4px solid #D4FF00;}
+.br{bottom:0;right:0;border-bottom:4px solid #D4FF00;border-right:4px solid #D4FF00;}
+</style></head><body><div class="cert">
+<div class="corner tl"></div><div class="corner tr"></div><div class="corner bl"></div><div class="corner br"></div>
+<div><div style="font-size:11px;font-weight:900;letter-spacing:6px;color:#D4FF00">POWERPLAY</div><div style="font-size:9px;letter-spacing:4px;color:#8B93C4">THE ACADEMY</div></div>
+<div>
+<div style="font-size:12px;color:#AEB6E2;letter-spacing:2px;text-transform:uppercase;margin-bottom:8px">This certifies that</div>
+<div style="font-size:42px;font-weight:900;color:white;letter-spacing:1px">${personName}</div>
+${venue?`<div style="display:inline-block;margin-top:6px;padding:4px 12px;border-radius:99px;border:1px solid rgba(212,255,0,.3);font-size:10px;letter-spacing:2px;color:#D4FF00">${venue}</div>`:""}
+<div style="width:80px;height:3px;background:#FF3C50;margin:16px 0"></div>
+<div style="font-size:11px;letter-spacing:3px;color:#8B93C4;text-transform:uppercase;margin-bottom:4px">has achieved the rank of</div>
+<div style="font-size:28px;font-weight:900;color:#D4FF00;letter-spacing:2px">${levelName.toUpperCase()}</div>
+<div style="font-size:12px;color:#D4D9F5;line-height:1.8;max-width:480px;margin-top:12px">Having completed all required modules, passed the knowledge test, and demonstrated competency in all practical assessments to the satisfaction of their assessor.</div>
+</div>
+<div style="display:flex;justify-content:space-between;align-items:flex-end">
+<div style="text-align:center">
+<div style="font-family:Georgia,serif;font-size:22px;color:#D4FF00;font-style:italic">${assessorName}</div>
+<div style="width:200px;height:1px;background:rgba(255,255,255,.2);margin:8px auto 4px"></div>
+<div style="font-size:9px;letter-spacing:2px;color:#8B93C4;text-transform:uppercase">Assessor signature</div>
+</div>
+<div style="text-align:center"><div style="font-size:28px">★</div><div style="font-size:9px;letter-spacing:2px;color:#8B93C4;text-transform:uppercase;margin-top:4px">PowerPlay Academy</div></div>
+<div style="text-align:right"><div style="font-size:14px;font-weight:700;color:white">${certifiedDate}</div><div style="font-size:9px;letter-spacing:2px;color:#8B93C4;text-transform:uppercase;margin-top:2px">Date certified</div></div>
+</div></div><script>window.onload=()=>window.print();</script></body></html>`;
+  const w=window.open("","_blank"); w.document.write(html); w.document.close();
 }
 
 /* ── shared ui atoms ── */
