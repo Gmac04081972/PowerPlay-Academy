@@ -24,17 +24,22 @@ const B = {
 
 /* ── role hierarchy ── */
 const ROLES = {
-  super_admin:   { label: "Super Admin",              can: ["all"] },
-  venue_manager: { label: "Venue Manager",            can: ["view_all","manage_venue"] },
-  assistant_vm:  { label: "Assistant Venue Manager",  can: ["view_all"] },
-  track_manager: { label: "Track Manager",            can: ["create_trainee","signoff_1_3"] },
-  assistant_tm:  { label: "Assistant Track Manager",  can: ["create_trainee","signoff_1_3"] },
-  trainee:       { label: "Trainee",                  can: [] },
+  super_admin:    { label: "Super Admin",             can: ["all"] },
+  venue_manager:  { label: "Venue Manager",           can: ["view_all","manage_venue"] },
+  assistant_vm:   { label: "Assistant Venue Manager", can: ["view_all"] },
+  track_manager:  { label: "Track Manager",           can: ["create_trainee","signoff"] },
+  assistant_tm:   { label: "Assistant Track Manager", can: ["create_trainee","signoff"] },
+  track_lead:     { label: "Track Lead",              can: [] },
+  track_attendant:{ label: "Track Attendant",         can: [] },
+  trainee:        { label: "Trainee",                 can: [] },
 };
-const isStaff  = (r) => ["super_admin","venue_manager","assistant_vm","track_manager","assistant_tm"].includes(r);
+const REGIONS = { WA: "WA", VIC: "VIC", NSW: "NSW", National: "National" };
+const GMAC_STANDARD = ["daymon@powerplay.com.au","glenn@powerplay.com.au"];
+const isStaff  = (r) => ["super_admin","venue_manager","assistant_vm","track_manager","assistant_tm","track_lead","track_attendant"].includes(r);
 const canCreate= (r) => ["super_admin","track_manager","assistant_tm"].includes(r);
-const canView  = (r) => ["super_admin","venue_manager","assistant_vm"].includes(r);
+const canView  = (r) => ["super_admin","venue_manager","assistant_vm","track_manager","assistant_tm"].includes(r);
 const canSignoff=(r) => ["super_admin","track_manager","assistant_tm"].includes(r);
+const isSeniorTM=(r) => r === "super_admin";
 
 const LEVELS = curriculum.levels;
 const ICONS  = { trainee: Shield, rookie: Flag, rally: Award, wrc: Crown, champion: Trophy, gmac: Star };
@@ -482,11 +487,12 @@ function Roster({ profile, go, flash }) {
   const [people, setPeople] = useState(null);
   const [q, setQ] = useState("");
   useEffect(()=>{ (async()=>{ const {data}=await profiles.list(); setPeople(data||[]); })(); },[]);
-  const myVenue = profile.venue;
-  const isAdmin = ["super_admin","venue_manager","assistant_vm"].includes(profile.role);
+  const isAdmin = profile.role === "super_admin";
+  const myVenues = profile.venues || (profile.venue ? [profile.venue] : []);
   const list=(people||[]).filter(u=>{
-    const venueOk = isAdmin || !myVenue || u.venue===myVenue;
-    const searchOk = !q||(u.full_name+(u.email||"")+(u.venue||"")).toLowerCase().includes(q.toLowerCase());
+    const venueOk = isAdmin || myVenues.length===0 ||
+      myVenues.some(v => (u.venues||[]).includes(v) || u.venue===v);
+    const searchOk = !q||(u.full_name+(u.email||"")+(u.venue||"")+(u.region||"")).toLowerCase().includes(q.toLowerCase());
     return venueOk && searchOk;
   });
 
@@ -506,7 +512,7 @@ function Roster({ profile, go, flash }) {
               <Avatar name={u.full_name}/>
               <div style={{flex:1,minWidth:0}}>
                 <div style={{fontWeight:700,fontSize:15,color:B.white,marginBottom:2}}>{u.full_name}</div>
-                <div style={{fontSize:12,color:B.mute}}>{ROLES[u.role]?.label||u.role}{u.venue?" · "+u.venue:""}</div>
+                <div style={{fontSize:12,color:B.mute}}>{ROLES[u.role]?.label||u.role}{u.region?" · "+u.region:u.venue?" · "+u.venue:""}</div>
               </div>
               <ChevronRight size={16} color={B.slate}/>
             </button>
@@ -693,10 +699,13 @@ function InviteTrainee({ profile, go, flash }) {
               <Label>Role</Label>
               <select value={f.role||"trainee"} onChange={e=>setF({...f,role:e.target.value})} style={{...inputStyle,appearance:"none",cursor:"pointer"}}>
                 <option value="trainee">Trainee</option>
+                <option value="track_attendant">Track Attendant</option>
+                <option value="track_lead">Track Lead</option>
                 <option value="assistant_tm">Assistant Track Manager</option>
                 <option value="track_manager">Track Manager</option>
                 <option value="venue_manager">Venue Manager</option>
                 <option value="assistant_vm">Assistant Venue Manager</option>
+                <option value="super_admin">Super Admin</option>
               </select>
             </div>
             <LimeBtn disabled={!ok||sending} onClick={invite}>{sending?"Sending…":"Send invite"}</LimeBtn>
